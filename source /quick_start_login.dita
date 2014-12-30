@@ -12,10 +12,12 @@
                     address supplied by the installer; for example,
                         <codeph>https://master.example.com</codeph>.</cmd>
                 <stepresult>You will receive a warning about an untrusted certificate. This is
-                    because _you_ were the signing authority for the console's certificate, and your
+                    because you were the signing authority for the console's certificate, and your
                     Puppet Enterprise deployment is not known to the major browser vendors as a
                     valid signing authority. <b>Ignore the warning and accept the certificate</b>.
-                    The steps to do this [vary by browser](./console_accessing.html).</stepresult>
+                    The steps to do this <xref format="html"
+                        href="https://docs.puppetlabs.com/pe/latest/console_accessing.html">vary by
+                        browser</xref>.</stepresult>
             </step>
             <step>
                 <cmd>On the login page for the console, log in with the username <b>admin</b> and
