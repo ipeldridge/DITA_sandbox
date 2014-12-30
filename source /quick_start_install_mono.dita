@@ -6,46 +6,50 @@
         this guide walks you through the steps of a monolithic install. A monolithic deployment is
         best suited for users who want to evaluate PE, or for users managing a small number of
         puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a
-        [split install](./install_pe_split.html). A monolithic PE deployment entails installing the
-        puppet master, the PE console, and PuppetDB all on one node. Puppet agent nodes are
-        installed later as part of the [agent installation quick start guide for
-        *nix](./quick_start_install_agents_nix.html) or the [agent installation quick start guide
-        for Windows](./quick_start_install_agents_windows.html). For more information about the
-        components that make up your PE deployment, visit the [installation
-        overview](./install_basic.html) in the PE docs.</shortdesc>
+        split install. </shortdesc>
     <taskbody>
-        <prereq>
-            <p><b>Prerequisites</b></p>
+        <prereq id="link">
+            <p><b>Prerequisites</b>:</p>
             <ul id="ul_lcg_4n4_4q">
-                <li>See the [system
-                    requirements](./install_system_requirements.html#monolithic-all-in-one-installation)
-                    to ensure your hardware needs are met.</li>
+                <li>See the <xref format="html"
+                        href="https://docs.puppetlabs.com/pe/latest/install_system_requirements.html#evaluation-environment"
+                        >system requirements</xref> to ensure your hardware needs are met.</li>
                 <li>Make sure that DNS is properly configured on the machines you're installing PE
-                    on. All nodes must **know their own hostnames.** This can be done by properly
+                    on. All nodes must <b>know their own hostnames</b>. This can be done by properly
                     configuring reverse DNS on your local DNS server, or by setting the hostname
-                    explicitly. Setting the hostname usually involves the `hostname` command and one
-                    or more configuration files, while the exact method varies by platform. In
-                    addition, all nodes must be able to **reach each other by name.** This can be
-                    done with a local DNS server, or by editing the `/etc/hosts` file on each node
-                    to point to the proper IP addresses.</li>
+                    explicitly. Setting the hostname usually involves the <codeph>hostname</codeph>
+                    command and one or more configuration files, while the exact method varies by
+                    platform. In addition, all nodes must be able to <b>reach each other by
+                    name</b>.  This can be done with a local DNS server, or by editing the
+                        <codeph>/etc/hosts</codeph> file on each node to point to the proper IP
+                    addresses.</li>
                 <li>Please ensure that port 3000 is reachable, as the web-based installer uses this
                     port. You can close this port when the installation is complete.</li>
             </ul>
         </prereq>
+        <context>A monolithic PE deployment entails installing the puppet master, the PE console,
+            and PuppetDB all on one node. Puppet agent nodes are installed later as part of the
+            [agent installation quick start guide for *nix](./quick_start_install_agents_nix.html)
+            or the [agent installation quick start guide for
+            Windows](./quick_start_install_agents_windows.html). For more information about the
+            components that make up your PE deployment, visit the [installation
+            overview](./install_basic.html) in the PE docs.</context>
         <steps>
             <step>
-                <cmd>Review the [General Prerequisites](#general-prerequisites-and-notes).</cmd>
+                <cmd>Review the Prerequisites.</cmd>
             </step>
             <step>
-                <cmd>[Download and verify the appropriate PE
-                    tarball](./install_basic.html#downloading-puppet-enterprise), and, if needed,
-                    copy the tarball to the machine on which you'll be installing PE.</cmd>
+                <cmd><xref href="https://docs.puppetlabs.com/pe/latest/install_basic.html"
+                        format="html">Download and verify the appropriate PE tarball</xref>, and, if
+                    needed, copy the tarball to the machine on which you'll be installing PE.</cmd>
                 <info>Be sure to download the full PE tarball, not the agent-only tarball. The
-                    agent-only tarball is used for [package management-based agent
-                    installation](./install_agents.html) which is not covered by this guide.</info>
+                    agent-only tarball is used for <xref format="html"
+                        href="https://docs.puppetlabs.com/pe/latest/install_agents.html#installing-agents-using-your-package-management-tools"
+                        >package management-based agent installation</xref> which is not covered by
+                    this guide.</info>
             </step>
             <step>
-                <cmd>Unpack the tarball. (Run <codeph>tar -xf &lt;tarball>`</codeph>.)</cmd>
+                <cmd>Unpack the tarball. (Run <codeph>tar -xf &lt;tarball></codeph>)</cmd>
             </step>
             <step>
                 <cmd>From the PE installer directory, run <codeph>sudo
@@ -140,6 +144,8 @@
             puppet master node is also an agent node, and can configure itself the same way it
             configures the other nodes in a deployment. Stay logged in as root for further
             exercises.</result>
-        <postreq>Log in to the Console.</postreq>
     </taskbody>
+    <related-links>
+        <link href="quick_start_login.dita#task_zwz_dqt_4q"/>
+    </related-links>
 </task>
