@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_snk_w45_4q">
+    <title>Installing *nix Agents</title>
+    <shortdesc>The following instructions are for installing Puppet agents on nodes running *nix
+        operating systems. Refer to the [Windows agent installation quick start
+        guide](./quick_start_install_agents_windows.html) for instructions on installing Puppet
+        agents on nodes running supported versions of the Windows OS.</shortdesc>
+    <taskbody>
+        <context>
+            <p>A computer running the PE agent is usually referred to as an “agent node”. The Puppet
+                agent regularly pulls configuration catalogs from a Puppet master server and applies
+                them to the local system.</p>
+            <p>For more information about Puppet agents, as well as the components that make up your
+                PE deployment, visit the [installation overview](./install_basic.html) in the PE
+                docs.</p>
+            <note>If you don't have internet connectivity, refer to [Installing Agents in a Puppet
+                Enterprise Infrastructure without Internet
+                Access](./install_agents.html#installing-agents-in-a-puppet-enterprise-infrastructure-without-internet-access)
+                to choose a method that is suitable for your needs.</note>
+        </context>
+        <steps id="steps_bvj_3p5_4q">
+            <step>
+                <cmd>Choose from one of the following scenarios:</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

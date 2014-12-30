@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>DITA Topic Map</title>
+ <topicref href="quick_start_supertask.dita" type="task" collection-type="sequence">
+  <topicref href="quick_start_install_mono.dita"/>
+  <topicref href="quick_start_login.dita"/>
+  <topicref href="quick_start_nix_install_supertask.dita" collection-type="choice">
+   <topicref href="quick_start_install_nix_same_os.dita"/>
+   <topicref href="quick_start_install_nix_diff_os.dita"/>
+  </topicref>
+  <topicref href="quick_start_sign_cert.dita"/>
+  <topicref href="quick_start_module_install.dita"/>
+ </topicref>
+</map>
