@@ -26,20 +26,29 @@
     <div class="body taskbody"><p class="shortdesc">If your Puppet agent node is the same OS and architecture as the Puppet master, log
         into your agent node and run the following command:</p>
 
-        <div class="section prereq p">This task assumes you've  and have the Puppet master, the PE console, and PuppetDB
-            up and running on one node. If you have not already done this, refer to the <a class="xref" href="quick_start_install_mono.html#task_xwm_nl4_4q" title="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a [split install](./install_pe_split.html). A monolithic PE deployment entails installing the puppet master, the PE console, and PuppetDB all on one node. Puppet agent nodes are installed later as part of the [agent installation quick start guide for *nix](./quick_start_install_agents_nix.html) or the [agent installation quick start guide for Windows](./quick_start_install_agents_windows.html). For more information about the components that make up your PE deployment, visit the [installation overview](./install_basic.html) in the PE docs.">PE Install Quick Start Guide</a>.</div>
+        <div class="section prereq p">
+            <p class="p">This task assumes you've and have the Puppet master, the PE console, and PuppetDB up
+                and running on one node. If you have not already done this, refer to the <a class="xref" href="quick_start_install_mono.html#task_xwm_nl4_4q" title="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a split install.">PE Install Quick Start Guide</a>.</p>
+
+        </div>
 
         <div class="li step p">
                 <span class="ph cmd"><samp class="ph codeph">curl -k
                         https://&lt;master.example.com&gt;:8140/packages/current/install.bash | sudo
                         bash</samp></span>
-                <div class="itemgroup stepresult">This script detects the OS on which the agent is running, sets up an
-                    apt, yum, or zipper repo that refers back to the Puppet master, and then pulls
-                    down and installs the `pe-agent` packages.</div>
+                <div class="itemgroup stepresult">
+                    <p class="p">This script detects the OS on which the agent is running, sets up an apt,
+                        yum, or zipper repo that refers back to the Puppet master, and then pulls
+                        down and installs the `pe-agent` packages.</p>
+
+                </div>
             </div>
 
-        <div class="section postreq"><strong class="ph b">Important:</strong>After installation is complete, you need to approve your new agent
-            node’s certificate request in the console. </div>
+        <div class="section postreq">
+            <p class="p"><strong class="ph b">Important</strong>: After installation is complete, you need to approve your new agent
+                node’s certificate request in the console. </p>
+
+        </div>
 
     </div>
 

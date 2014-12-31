@@ -9,4 +9,6 @@ fl["5"]= "quick_start_nix_install_con.html";
 fl["6"]= "quick_start_nix_install_supertask.html";
 fl["7"]= "quick_start_sign_cert.html";
 fl["8"]= "quick_start_supertask.html";
+fl["9"]= "task_xwm_nl4_4q.html";
+fl["10"]= "task_zwz_dqt_4q.html";
 var doStem = false

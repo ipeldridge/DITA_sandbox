@@ -20,10 +20,5 @@
                 Access](./install_agents.html#installing-agents-in-a-puppet-enterprise-infrastructure-without-internet-access)
                 to choose a method that is suitable for your needs.</note>
         </context>
-        <steps id="steps_bvj_3p5_4q">
-            <step>
-                <cmd>Choose from one of the following scenarios:</cmd>
-            </step>
-        </steps>
     </taskbody>
 </task>

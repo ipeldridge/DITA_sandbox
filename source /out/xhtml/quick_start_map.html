@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Puppet Enterprise Quick Start Guide"/>
+<meta name="abstract" content="Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE installation for actual deployment or want to learn some fundamentals of configuration management with Puppet Enterprise, this series of guides provides the steps you need to get up and running relatively quickly. We’ll walk you through the setup of a monolithic (all-in-one node) installation and show you how to automate some basic tasks that sysadmins regularly perform."/>
+<meta name="description" content="Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE installation for actual deployment or want to learn some fundamentals of configuration management with Puppet Enterprise, this series of guides provides the steps you need to get up and running relatively quickly. We’ll walk you through the setup of a monolithic (all-in-one node) installation and show you how to automate some basic tasks that sysadmins regularly perform."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="task_trs_2m5_4q"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Puppet Enterprise Quick Start Guide</title>
+</head>
+<body>
+
+<div class="nested0" id="task_trs_2m5_4q">
+    <h1 class="title topictitle1">Puppet Enterprise Quick Start Guide</h1>
+
+    
+    <div class="body taskbody"><p class="shortdesc">Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE
+        installation for actual deployment or want to learn some fundamentals of configuration
+        management with Puppet Enterprise, this series of guides provides the steps you need to get
+        up and running relatively quickly. We’ll walk you through the setup of a monolithic
+        (all-in-one node) installation and show you how to automate some basic tasks that sysadmins
+        regularly perform.</p>
+
+        <div class="section context">
+            <p class="p">The following guides present tasks in the order that you would most likely perform
+                them. See the prerequisite sections in each guide to ensure you have the correct
+                setup to perform the steps as they're provided:</p>
+
+        </div>
+
+    </div>
+
+<div class="topic task nested1" id="task_xwm_nl4_4q">
+    <h2 class="title topictitle2">PE Install Quick Start Guide</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">To get you started using Puppet Enterprise (PE) relatively quickly and efficiently,
+        this guide walks you through the steps of a monolithic install. A monolithic deployment is
+        best suited for users who want to evaluate PE, or for users managing a small number of
+        puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a
+        split install. </p>
+
+        <div class="section prereq p" id="task_xwm_nl4_4q__link">
+            <p class="p"><strong class="ph b">Prerequisites</strong>:</p>
+
+            <ul class="ul" id="task_xwm_nl4_4q__ul_lcg_4n4_4q">
+                <li class="li">See the <a class="xref" href="https://docs.puppetlabs.com/pe/latest/install_system_requirements.html#evaluation-environment">system requirements</a> to ensure your hardware needs are met.</li>
+
+                <li class="li">Make sure that DNS is properly configured on the machines you're installing PE
+                    on. All nodes must <strong class="ph b">know their own hostnames</strong>. This can be done by properly
+                    configuring reverse DNS on your local DNS server, or by setting the hostname
+                    explicitly. Setting the hostname usually involves the <samp class="ph codeph">hostname</samp>
+                    command and one or more configuration files, while the exact method varies by
+                    platform. In addition, all nodes must be able to <strong class="ph b">reach each other by
+                    name</strong>.  This can be done with a local DNS server, or by editing the
+                        <samp class="ph codeph">/etc/hosts</samp> file on each node to point to the proper IP
+                    addresses.</li>
+
+                <li class="li">Please ensure that port 3000 is reachable, as the web-based installer uses this
+                    port. You can close this port when the installation is complete.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section context">A monolithic PE deployment entails installing the puppet master, the PE console,
+            and PuppetDB all on one node. Puppet agent nodes are installed later as part of the
+            [agent installation quick start guide for *nix](./quick_start_install_agents_nix.html)
+            or the [agent installation quick start guide for
+            Windows](./quick_start_install_agents_windows.html). For more information about the
+            components that make up your PE deployment, visit the [installation
+            overview](./install_basic.html) in the PE docs.</div>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">Review the Prerequisites.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd"><a class="xref" href="https://docs.puppetlabs.com/pe/latest/install_basic.html">Download and verify the appropriate PE tarball</a>, and, if
+                    needed, copy the tarball to the machine on which you'll be installing PE.</span>
+                <div class="itemgroup info">Be sure to download the full PE tarball, not the agent-only tarball. The
+                    agent-only tarball is used for <a class="xref" href="https://docs.puppetlabs.com/pe/latest/install_agents.html#installing-agents-using-your-package-management-tools">package management-based agent installation</a> which is not covered by
+                    this guide.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Unpack the tarball. (Run <samp class="ph codeph">tar -xf &lt;tarball&gt;</samp>)</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">From the PE installer directory, run <samp class="ph codeph">sudo
+                        ./puppet-enterprise-installer</samp>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">When prompted, choose "Yes" to install the setup packages. (If you choose "No,"
+                    the installer will exit.)</span>
+                <div class="itemgroup stepresult"> At this point, the PE installer will start a web server and provide a
+                    web address: <samp class="ph codeph">https://&lt;install platform hostname&gt;:3000</samp>.
+                    Please ensure that port 3000 is reachable. If necessary, you can close port 3000
+                    when the installation is complete. Also be sure to use
+                        <samp class="ph codeph">https</samp>.<p class="p">Leave your terminal connection open until the
+                        installation is complete; otherwise the installation will
+                    fail.</p>
+</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Copy the address into your browser.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">When prompted, accept the security request in your browser.</span>
+                <div class="itemgroup info">The web-based installation uses a default SSL certificate; you’ll have to add
+                    a security exception in order to access the web-based installer. This is safe to
+                    do.</div>
+                <div class="itemgroup stepresult">You'll be taken to the installer start page.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the start page, click <span class="ph uicontrol">Let's get started</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Next, you'll be asked to choose your deployment type. Select
+                        <span class="ph uicontrol">Monolithic</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Choose to install the Puppet master component on the server you're running the
+                    installer from.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Provide the following information about the puppet master server:</span>
+                <ol type="a" class="ol substeps" id="task_xwm_nl4_4q__substeps_v5t_s44_4q">
+                    <li class="li substep">
+                        <span class="ph cmd">
+                            <span class="ph uicontrol">Puppet master FQDN</span>: provide the fully qualified
+                            domain name of the server you're installing PE on; for example,
+                                <samp class="ph codeph">master.example.com</samp>.</span>
+                    </li>
+
+                    <li class="li substep">
+                        <span class="ph cmd"><span class="ph uicontrol">DNS aliases</span>: provide a comma-separated list of
+                            aliases agent nodes can use to reach to the master; for example
+                                <samp class="ph codeph">master</samp>.</span>
+                    </li>
+
+                </ol>
+
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">When prompted about database support, choose the default option
+                        <span class="ph uicontrol">Install PostgreSQL for me</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Provide the following information about the PE console administrator
+                    user:</span>
+                <ol type="a" class="ol substeps" id="task_xwm_nl4_4q__substeps_sfg_hp4_4q">
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd"><span class="ph uicontrol">Console superuser password</span>: create a password
+                            for the console login; the password must be at least eight
+                            characters.</span>
+                        <div class="itemgroup info">The user name for the console administrator user is
+                                <span class="ph uicontrol">admin</span>.</div>
+                    </li>
+
+                </ol>
+
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol"> Submit</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the confirm plan page, review the information you provided, and, if it looks
+                    correct, click <span class="ph uicontrol">Continue</span>.</span>
+                <div class="itemgroup info"> If you need to make any changes, click <span class="ph uicontrol">Go Back</span> and
+                    make whatever changes are required.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the validation page, the installer will verify various configuration
+                    elements (e.g., if SSH credentials are correct, if there is enough disk space,
+                    and if the OS is the same for the various components). If there aren't any
+                    outstanding issues, click <span class="ph uicontrol">Deploy now</span>.</span>
+                <div class="itemgroup info">The installer will then install and configure Puppet Enterprise. It may also
+                    need to install additional packages from your OS's repository. <strong class="ph b">This process
+                        may take up to 10-15 minutes.</strong> When the installation is complete, the
+                    installer script that was running in the terminal will close itself.</div>
+            </li>
+</ol>
+
+        <div class="section result">You have now installed the puppet master node. As indicated by the installer, the
+            puppet master node is also an agent node, and can configure itself the same way it
+            configures the other nodes in a deployment. Stay logged in as root for further
+            exercises.</div>
+
+    </div>
+
+    <div class="related-links"><div class="relinfo reltasks"><strong>Related tasks</strong><br/>
+<div><a class="link" href="quick_start_map.html#task_zwz_dqt_4q" title="To log in to the console, you can select the Start Using Puppet Enterprise Nowbutton that appears at the end of the web-based installer or follow the steps below.">Log in to the PE Console</a></div>
+</div>
+</div>
+</div>
+<div class="topic task nested1" id="task_zwz_dqt_4q">
+    <h2 class="title topictitle2">Log in to the PE Console</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">To log in to the console, you can select the <span class="ph uicontrol">Start Using Puppet Enterprise
+            Now</span>button that appears at the end of the web-based installer or follow the
+        steps below.</p>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd"><strong class="ph b">On your control workstation</strong>, open a web browser and point it to the
+                    address supplied by the installer; for example,
+                        <samp class="ph codeph">https://master.example.com</samp>.</span>
+                <div class="itemgroup stepresult">You will receive a warning about an untrusted certificate. This is
+                    because you were the signing authority for the console's certificate, and your
+                    Puppet Enterprise deployment is not known to the major browser vendors as a
+                    valid signing authority. <strong class="ph b">Ignore the warning and accept the certificate</strong>.
+                    The steps to do this <a class="xref" href="https://docs.puppetlabs.com/pe/latest/console_accessing.html">vary by
+                        browser</a>.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the login page for the console, log in with the username <strong class="ph b">admin</strong> and
+                    the password you provided when installing the puppet master.</span>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_snk_w45_4q">
+    <h2 class="title topictitle2">Installing *nix Agents</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">The following instructions are for installing Puppet agents on nodes running *nix
+        operating systems. Refer to the [Windows agent installation quick start
+        guide](./quick_start_install_agents_windows.html) for instructions on installing Puppet
+        agents on nodes running supported versions of the Windows OS.</p>
+
+        <div class="section context">
+            <p class="p">A computer running the PE agent is usually referred to as an <dfn class="term">agent node</dfn>.
+                The Puppet agent regularly pulls configuration catalogs from a Puppet master server
+                and applies them to the local system.</p>
+
+            <p class="p">For more information about Puppet agents, as well as the components that make up your
+                PE deployment, visit the <a class="xref" href="https://docs.puppetlabs.com/pe/latest/install_basic.html">installing PE
+                    overview</a> in the PE docs.</p>
+
+            <div class="note note"><span class="notetitle">Note:</span> If you don't have internet connectivity, refer to [Installing Agents in a Puppet
+                Enterprise Infrastructure without Internet
+                Access](./install_agents.html#installing-agents-in-a-puppet-enterprise-infrastructure-without-internet-access)
+                to choose a method that is suitable for your needs.</div>
+
+        </div>
+
+        <div class="li step p">
+                <span class="ph cmd">Choose from one of the following scenarios:</span>
+            </div>
+
+    </div>
+
+<div class="topic task nested2" id="task_ymt_nrt_4q">
+    <h3 class="title topictitle3">Installing Agents with the Same OS and Architecture as the Puppet Master</h3>
+
+    
+    <div class="body taskbody"><p class="shortdesc">If your Puppet agent node is the same OS and architecture as the Puppet master, log
+        into your agent node and run the following command:</p>
+
+        <div class="section prereq p">
+            <p class="p">This task assumes you've and have the Puppet master, the PE console, and PuppetDB up
+                and running on one node. If you have not already done this, refer to the <a class="xref" href="quick_start_map.html#task_xwm_nl4_4q" title="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a split install.">PE Install Quick Start Guide</a>.</p>
+
+        </div>
+
+        <div class="li step p">
+                <span class="ph cmd"><samp class="ph codeph">curl -k
+                        https://&lt;master.example.com&gt;:8140/packages/current/install.bash | sudo
+                        bash</samp></span>
+                <div class="itemgroup stepresult">
+                    <p class="p">This script detects the OS on which the agent is running, sets up an apt,
+                        yum, or zipper repo that refers back to the Puppet master, and then pulls
+                        down and installs the `pe-agent` packages.</p>
+
+                </div>
+            </div>
+
+        <div class="section postreq">
+            <p class="p"><strong class="ph b">Important</strong>: After installation is complete, you need to approve your new agent
+                node’s certificate request in the console. </p>
+
+        </div>
+
+    </div>
+
+    <div class="related-links"><div class="relinfo reltasks"><strong>Related tasks</strong><br/>
+<div><a class="link" href="quick_start_map.html#task_fqd_pwt_4q">Approving the Certificate Request</a></div>
+</div>
+</div>
+</div>
+<div class="topic task nested2" id="task_gyc_bst_4q">
+    <h3 class="title topictitle3">Installing Agents with Different OS and Architecture than the Puppet Master</h3>
+
+    
+    <div class="body taskbody"><p class="shortdesc">If your Puppet master OS and architecture are different from the agent, follow this
+        example.</p>
+
+        <div class="section prereq p">This task assumes you've  and have the Puppet master, the PE console, and PuppetDB
+            up and running on one node. If you have not already done this, refer to the <a class="xref" href="quick_start_map.html#task_xwm_nl4_4q" title="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a split install.">PE Install Quick Start Guide</a></div>
+
+        <div class="section context">
+            <p class="p">This example describes adding an agent node running Debian 6 on AMD64 hardware. You
+                can select a different architecture for your agent if you prefer.</p>
+
+            <p class="p">To install an agent with a different OS from the Puppet master, you first add the
+                appropriate class for the repo that contains the agent packages, you classify the PE
+                Master node group with that class, and then run a curl command from the agent to the
+                master to retrieve the necessary packages to install the agent.</p>
+
+        </div>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">From the console, click <strong class="ph b">Classification</strong> in the top navigation bar.<img class="image" id="task_gyc_bst_4q__image_wfp_rtt_4q"/></span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">From the  <strong class="ph b">Classification</strong> page, click the <strong class="ph b">PE Master</strong> group.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click the <strong class="ph b">Classes</strong> tab.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">In the <strong class="ph b">Add new class</strong>field, in the <strong class="ph b">Class name</strong> box, begin typing
+                        <span class="q">"pe_repo,"</span> and select the class
+                        <samp class="ph codeph">pe_repo::platform::debian_6_amd64</samp>, or whichever class you
+                    want, from the list of classes.<img class="image" id="task_gyc_bst_4q__image_mml_r5t_4q"/></span>
+                <div class="itemgroup info"><strong class="ph b">Note: </strong>The repo classes are listed as
+                        <samp class="ph codeph">pe_repo::platform::&lt;agent_os_version_architecture&gt;</samp>.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <strong class="ph b">Add class</strong>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click the <strong class="ph b">Commit changes</strong>button.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <strong class="ph b">Live Management</strong>, and click <strong class="ph b">Control Puppet</strong>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <strong class="ph b">runonce</strong> and then click <strong class="ph b">Run</strong>. This configures the Puppet
+                    master node using the newly-assigned class.</span>
+                <div class="itemgroup stepresult">The new repo is created in <samp class="ph codeph">/opt/puppet/packages/public</samp>.
+                    It’s called
+                        <samp class="ph codeph">puppet-enterprise-3.7.0-&lt;os-version-architecture&gt;-agent</samp>.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">SSH into the Debian node where you want to install the agent, and run
+                        <samp class="ph codeph">curl -k
+                        https://&lt;master.example.com&gt;:8140/packages/current/install.bash | sudo
+                        bash</samp>.</span>
+                <div class="itemgroup info"><strong class="ph b">Note</strong>: <ul class="ul" id="task_gyc_bst_4q__ul_djg_tvt_4q">
+                        <li class="li">You can replace <samp class="ph codeph">current</samp> in the script with a specific
+                            PE version number, in the form of  <samp class="ph codeph">3.x.x</samp>.</li>
+
+                        <li class="li">Depending on your platform, the method for downloading the script may
+                            vary.</li>
+
+                    </ul>
+</div>
+                <div class="itemgroup stepresult">The installer installs and configures the Puppet Enterprise
+                    agent.</div>
+            </li>
+</ol>
+
+        <div class="section postreq">After installation is complete, you need to approve your new agent node’s
+            certificate request in the console. </div>
+
+    </div>
+
+    <div class="related-links"><div class="relinfo reltasks"><strong>Related tasks</strong><br/>
+<div><a class="link" href="quick_start_map.html#task_fqd_pwt_4q">Approving the Certificate Request</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="topic task nested1" id="task_fqd_pwt_4q">
+    <h2 class="title topictitle2">Approving the Certificate Request</h2>
+
+    <div class="body taskbody">
+        <div class="section context">
+            <p class="p">During installation, the agent node contacts the Puppet master and requests a
+                certificate. To add the node to the console and to start managing its configuration,
+                you need to approve its request on the Puppet master. This is most easily done via
+                the console, as follows.</p>
+
+        </div>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">From the console, note the pending <span class="ph uicontrol">node requests</span>
+                    indicator in the upper right corner. Click it to load a list of currently
+                    pending node requests.<img class="image" id="task_fqd_pwt_4q__image_kxd_wwt_4q"/></span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Accept All</span> button to approve all the requests
+                    and add the nodes.</span>
+                <div class="itemgroup stepresult">The Puppet agents can now retrieve configurations from the master the
+                    next time Puppet runs.</div>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_s1j_nkm_4q">
+    <h2 class="title topictitle2">Module Installation Quick Start Guide</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">In this guide, you'll install the puppetlabs-apache module, a Puppet Enterprise
+        supported module. Modules contain [classes](../puppet/3/reference/lang_classes.html), which
+        are named chunks of puppet code and are the primary means by which Puppet Enterprise
+        configures and manages nodes. While you can use any module available on the Forge, PE
+        customers can take advantage of [supported modules](http://forge.puppetlabs.com/supported);
+        these modules--designed to make common services easier--are tested, and maintained by Puppet
+        Labs. In the [Module Writing Basics for Linux QSG](./quick_writing_nix.html) you'll learn
+        more about modules, including customizing and writing your own modules on either
+        [Windows](./quick_writing_windows.html) or [*nix](./quick_writing_nix.html)
+        platforms.</p>
+
+        <div class="section prereq p">This guide assumes you've already [installed a monolithic PE
+            deployment](./quick_start_install_mono.html), and have installed at least one [*nix
+            agent node](./quick_start_install_agents_nix.html).</div>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd"><strong class="ph b">On the Puppet master</strong>, run<samp class="ph codeph">puppet module search apache</samp>.
+                    This command searches for modules from the Puppet Forge with
+                        `<samp class="ph codeph">apache</samp> in their names or descriptions.</span>
+                <div class="itemgroup stepresult">Your search will have a list of results that are displayed as follows: <div class="p">
+                        <pre class="pre codeblock">Searching http://forgeapi.puppetlabs.com ...
+NAME                  DESCRIPTION                           AUTHOR        KEYWORDS
+puppetlabs-apache     Puppet module for apache              @puppetlabs   apache</pre>
+
+                    </div>
+<p class="p">You can view detailed info about the module on the
+                        [Forge](http://forge.puppetlabs.com/puppetlabs/apache).</p>
+</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">To install the Apache module, run, <samp class="ph codeph">puppet module install
+                        puppetlabs-apache</samp>puppet module install puppetlabs-apache. </span>
+                <div class="itemgroup stepresult">The result should look like this:<div class="p">
+                        <pre class="pre codeblock">Preparing to install into /etc/puppetlabs/puppet/environments/production/modules ...
+Notice: Downloading from http://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppetlabs/puppet/environments/production/modules
+└── puppetlabs-apache (v1.1.1)</pre>
+
+                    </div>
+</div>
+            </li>
+</ol>
+
+        <div class="section result">You have just installed a Puppet module. All of the classes in the module are now
+            available to be added to the console and assigned to nodes.<div class="note note"><span class="notetitle">Note:</span> By default, the modules
+                you use to manage nodes are located in
+                `/etc/puppetlabs/puppet/environments/production/modules`---this includes modules
+                installed by PE, those that you download from the Forge, and those you write
+                yourself. &gt; &gt;**Note**: PE installs additional modules in
+                `/opt/puppet/share/puppet/modules`. These must not be modified, and you should not
+                add your own modules to this directory, as they may be removed during
+                upgrades.</div>
+</div>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>
