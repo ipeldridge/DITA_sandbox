@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map>
- <title>DITA Topic Map</title>
+ <title>Puppet Enterprise Quick Start Guide</title>
  <topicref href="quick_start_supertask.dita" type="task" collection-type="sequence">
   <topicref href="quick_start_install_mono.dita"/>
   <topicref href="quick_start_login.dita"/>

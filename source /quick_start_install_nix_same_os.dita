@@ -5,21 +5,27 @@
     <shortdesc>If your Puppet agent node is the same OS and architecture as the Puppet master, log
         into your agent node and run the following command:</shortdesc>
     <taskbody>
-        <prereq>This task assumes you've  and have the Puppet master, the PE console, and PuppetDB
-            up and running on one node. If you have not already done this, refer to the <xref
-                href="quick_start_install_mono.dita#task_xwm_nl4_4q"/>.</prereq>
+        <prereq>
+            <p>This task assumes you've and have the Puppet master, the PE console, and PuppetDB up
+                and running on one node. If you have not already done this, refer to the <xref
+                    href="quick_start_install_mono.dita#task_xwm_nl4_4q"/>.</p>
+        </prereq>
         <steps>
             <step>
                 <cmd><codeph>curl -k
                         https://&lt;master.example.com>:8140/packages/current/install.bash | sudo
                         bash</codeph></cmd>
-                <stepresult>This script detects the OS on which the agent is running, sets up an
-                    apt, yum, or zipper repo that refers back to the Puppet master, and then pulls
-                    down and installs the `pe-agent` packages.</stepresult>
+                <stepresult>
+                    <p>This script detects the OS on which the agent is running, sets up an apt,
+                        yum, or zipper repo that refers back to the Puppet master, and then pulls
+                        down and installs the `pe-agent` packages.</p>
+                </stepresult>
             </step>
         </steps>
-        <postreq><b>Important:</b>After installation is complete, you need to approve your new agent
-            node’s certificate request in the console. </postreq>
+        <postreq>
+            <p><b>Important</b>: After installation is complete, you need to approve your new agent
+                node’s certificate request in the console. </p>
+        </postreq>
     </taskbody>
     <related-links>
         <link href="quick_start_sign_cert.dita#task_fqd_pwt_4q"/>
