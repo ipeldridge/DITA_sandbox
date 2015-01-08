@@ -16,13 +16,13 @@
             agent node](./quick_start_install_agents_nix.html) and the [puppetlabs-apache
             module](./quick_start_module_install_nix.html).</prereq>
     </taskbody>
-    <task id="task_sl5_lyh_rq" conref="quick_start_create_apache_group.dita">
+    <task id="task_sl5_lyh_rq" conref="create_apache_group.dita">
         <title/>
     </task>
-    <task id="task_bgk_4yh_rq" conref="quick_start_add_apache_class_example_group.dita">
+    <task id="task_bgk_4yh_rq" conref="add_apache_class_example_group.dita">
         <title/>
     </task>
-    <task id="task_d2g_qyh_rq" conref="quick_start_edit_class_params.dita">
+    <task id="task_d2g_qyh_rq" conref="edit_class_params.dita">
         <title/>
     </task>
 </task>

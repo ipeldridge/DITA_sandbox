@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /temp/xhtml?><?workdir-uri file:/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source%20/temp/xhtml/?><?path2project?><?path2project-uri ./?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="task_s1j_nkm_4q" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="task:1;3:28">
+    <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="title:1;4:12">Module Installation Quick Start Guide</title>
+    <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="shortdesc:1;5:16">In this guide, you'll install the puppetlabs-apache module, a Puppet Enterprise
+        supported module. Modules contain [classes](../puppet/3/reference/lang_classes.html), which
+        are named chunks of puppet code and are the primary means by which Puppet Enterprise
+        configures and manages nodes. While you can use any module available on the Forge, PE
+        customers can take advantage of [supported modules](http://forge.puppetlabs.com/supported);
+        these modules--designed to make common services easier--are tested, and maintained by Puppet
+        Labs. In the [Module Writing Basics for Linux QSG](./quick_writing_nix.html) you'll learn
+        more about modules, including customizing and writing your own modules on either
+        [Windows](./quick_writing_windows.html) or [*nix](./quick_writing_nix.html)
+        platforms.</shortdesc>
+    <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="taskbody:1;15:15">
+        <prereq class="- topic/section task/prereq " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="prereq:1;16:17">This guide assumes you've already [installed a monolithic PE
+            deployment](./quick_start_install_mono.html), and have installed at least one [*nix
+            agent node](./quick_start_install_agents_nix.html).</prereq>
+        <steps class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="steps:1;19:16">
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="step:1;20:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="cmd:1;21:22"><b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="b:1;21:25">On the Puppet master</b>, run<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="codeph:1;21:62">puppet module search apache</codeph>.
+                    This command searches for modules from the Puppet Forge with
+                        `<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="codeph:2;23:34">apache</codeph> in their names or descriptions.</cmd>
+                <stepresult class="- topic/itemgroup task/stepresult " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="stepresult:1;24:29">Your search will have a list of results that are displayed as follows: <p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="p:1;24:103">
+                        <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="codeblock:1;25:36">Searching http://forgeapi.puppetlabs.com ...
+NAME                  DESCRIPTION                           AUTHOR        KEYWORDS
+puppetlabs-apache     Puppet module for apache              @puppetlabs   apache</codeblock>
+                    </p><p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="p:2;28:28">You can view detailed info about the module on the
+                        [Forge](http://forge.puppetlabs.com/puppetlabs/apache).</p></stepresult>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="step:2;31:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="cmd:2;32:22">To install the Apache module, run, <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="codeph:3;32:65">puppet module install
+                        puppetlabs-apache</codeph>puppet module install puppetlabs-apache. </cmd>
+                <stepresult class="- topic/itemgroup task/stepresult " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="stepresult:2;34:29">The result should look like this:<p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="p:3;34:65">
+                        <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="codeblock:2;35:36">Preparing to install into /etc/puppetlabs/puppet/environments/production/modules ...
+Notice: Downloading from http://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppetlabs/puppet/environments/production/modules
+└── puppetlabs-apache (v1.1.1)</codeblock>
+                    </p></stepresult>
+            </step>
+        </steps>
+        <result class="- topic/section task/result " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="result:1;43:17">You have just installed a Puppet module. All of the classes in the module are now
+            available to be added to the console and assigned to nodes.<note class="- topic/note " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_module_install.dita" xtrc="note:1;44:78">By default, the modules
+                you use to manage nodes are located in
+                `/etc/puppetlabs/puppet/environments/production/modules`---this includes modules
+                installed by PE, those that you download from the Forge, and those you write
+                yourself. &gt; &gt;**Note**: PE installs additional modules in
+                `/opt/puppet/share/puppet/modules`. These must not be modified, and you should not
+                add your own modules to this directory, as they may be removed during
+                upgrades.</note></result>
+    </taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:10;15:53" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:1;5:73" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="quick_start_supertask.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Puppet Enterprise Quick Start Guide</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE         installation for actual deployment or want to learn some fundamentals of configuration         management with Puppet Enterprise, this series of guides provides the steps you need to get         up and running relatively quickly. We’ll walk you through the setup of a monolithic         (all-in-one node) installation and show you how to automate some basic tasks that sysadmins         regularly perform.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:9;14:65" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="experiment%20files/quick_start_nc_rbac.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Node Classification and RBAC Quick Start Guide</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">In this guide, you'll create a new node group, apply rules to the group to define the         nodes it will include, and add classes to the group. You'll also create a new user role and         give the role view permissions on your node group. Finally, you’ll create a new local user,         and assign a user role to that user. </desc></link></linkpool></related-links>
+</task>
