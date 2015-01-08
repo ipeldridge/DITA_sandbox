@@ -5,13 +5,13 @@
  <topicref href="quick_start_supertask.dita" collection-type="sequence">
   <topicref href="quick_start_install_mono.dita"/>
   <topicref href="quick_start_login.dita"/>
-  <topicref href="quick_start_nix_install_supertask.dita" chunk="to-content"
-   collection-type="choice" linking="targetonly">
+  <topicref href="quick_start_nix_install_supertask.dita" collection-type="choice">
    <topicref href="quick_start_install_nix_same_os.dita"/>
    <topicref href="quick_start_install_nix_diff_os.dita"/>
   </topicref>
   <topicref href="quick_start_sign_cert.dita"/>
   <topicref href="quick_start_module_install.dita"/>
+  <topicref href="quick_start_nc_rbac.dita"/>
  </topicref>
  <reltable>
   <relheader>

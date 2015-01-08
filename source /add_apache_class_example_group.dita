@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_d1m_tzg_rq">
+    <title>Adding Apache Class to Example Group</title>
+    <shortdesc>In this procedure, you'll add the <codeph>apache</codeph> class to the
+            <b>apache_example</b> group you created in the previous task.</shortdesc>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>Click the <uicontrol>Classes</uicontrol> tab. </cmd>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Class name</uicontrol> field, begin typing "apache," and
+                    select it from the autocomplete list. </cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Add class</uicontrol> and then click <uicontrol>Commit 1
+                        change</uicontrol>.</cmd>
+                <stepresult>The <codeph>apache</codeph> class now appears in the list of classes for
+                    your agent node. You can see this list by clicking <uicontrol>Nodes</uicontrol>
+                    and then clicking your node in the <uicontrol>Nodes</uicontrol> list. A page
+                    opens with your node's details.</stepresult>
+            </step>
+            <step>
+                <cmd>From your agent node, navigate to <codeph>/var/www/html</codeph>, and create a
+                    file named <codeph>index.html</codeph>. </cmd>
+            </step>
+            <step>
+                <cmd>Open <codeph>index.html</codeph> with the text editor of your choice and fill
+                    it with some content (e.g., "Hello World"). </cmd>
+            </step>
+            <step>
+                <cmd>From the console, navigate to the <uicontrol>Live Management</uicontrol> page,
+                    and select the <uicontrol>Control Puppet</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>runonce</uicontrol> and then <uicontrol>Run</uicontrol>. This
+                    will configure the node using the newly-assigned class. Wait one or two
+                    minutes.</cmd>
+            </step>
+            <step>
+                <cmd>Open a browser and enter the IP address for the agent node, adding port 80 on
+                    the end (e.g., <codeph>www.myagentnodeIP:80</codeph>).</cmd>
+                <stepresult/>
+            </step>
+            <step>
+                <cmd>You will see the contents of <codeph>/var/www/html/index.html</codeph>
+                    displayed.</cmd>
+            </step>
+        </steps>
+        <result><b>Result</b>: Puppet Enterprise is now managing the default Apache vhost on your
+            agent node. At this point, you can check out the Apache "ReadMe" on the Forge to explore
+            options for managing your Apache instances as needed. The [*Nix module writing
+            QSG](./quick_writing_nix.html) discusses how to write your own class that manages a web
+            app running on an Apache virtual host.</result>
+    </taskbody>
+</task>

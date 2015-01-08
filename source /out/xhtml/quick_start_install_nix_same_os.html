@@ -60,6 +60,35 @@
 <div><a class="link" href="quick_start_sign_cert.html#task_fqd_pwt_4q">Approving the Certificate Request</a></div>
 </div>
 </div>
+    <div class="topic task nested1" id="task_rlb_dvh_rq">
+    <h2 class="title topictitle2">Approving the Certificate Request</h2>
+
+    <div class="body taskbody">
+        <div class="section context">
+            <p class="p">During installation, the agent node contacts the Puppet master and requests a
+                certificate. To add the node to the console and to start managing its configuration,
+                you need to approve its request on the Puppet master. This is most easily done via
+                the console, as follows.</p>
+
+        </div>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">From the console, note the pending <span class="ph uicontrol">node requests</span>
+                    indicator in the upper right corner. Click it to load a list of currently
+                    pending node requests.<img class="image" id="task_rlb_dvh_rq__d15e27"/></span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Accept All</span> button to approve all the requests
+                    and add the nodes.</span>
+                <div class="itemgroup stepresult">The Puppet agents can now retrieve configurations from the master the
+                    next time Puppet runs.</div>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+
 
 </body>
 </html>

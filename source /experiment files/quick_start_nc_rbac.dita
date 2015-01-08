@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_vlf_mlh_rq">
+    <title>Node Classification and RBAC Quick Start Guide</title>
+    <shortdesc>In this guide, you'll create a new node group, apply rules to the group to define the
+        nodes it will include, and add classes to the group. You'll also create a new user role and
+        give the role view permissions on your node group. Finally, you’ll create a new local user,
+        and assign a user role to that user. </shortdesc>
+    <taskbody>
+        <prereq><b>Prerequisites</b>: This guide assumes you've already [installed a monolithic PE
+            deployment](./quick_start_install_mono.html), and have installed at least one [*nix
+            agent node](./quick_start_install_agents_nix.html) or one [Windows
+                node](./quick_start_install_agents_windows.html).<p>It also assumes you’ve installed
+                a [*nix](./quick_start_module_install_nix.html) or
+                [Windows](./quick_start_module_install_windows.html) module. Finally, you must have
+                admin permissions to complete these steps, which include assigning a user to a
+                role.</p></prereq>
+        <context>
+            <p>The Puppet Enterprise (PE) console enables you to manage nodes groups and users. You
+                can create node groups and then assign classes to nodes through those node groups.
+                You can connect with an external directory, such as Active Directory or OpenLDAP,
+                and import users and groups, rather than creating users and groups in two locations.
+                You can also create user roles, and assign users to those roles. Roles are granted
+                permissions, such as permission to act on node groups. When you assign roles to
+                users or user groups, you are essentially granting users permissions in a more
+                organized way.</p>
+            <p>This guide doesn't attempt to connect with an OpenLDAP or Active Directory. For more
+                information, see [Working with Role-Based Access Control](./rbac_intro.html).</p>
+            <note>Users and user groups are not currently deletable. And roles aren’t deletable via
+                the console, only by API. Therefore, we recommend that you try out these steps on a
+                virtual machine.</note>
+        </context>
+    </taskbody>
+    <task id="task_ey1_lmh_rq">
+        <title>Create a New Node Group</title>
+        <taskbody>
+            <steps id="steps_lqh_wmh_rq">
+                <step>
+                    <cmd>In the PE console, click **Classification**.</cmd>
+                </step>
+                <step>
+                    <cmd>In the **Node group name** field, type "web_app_servers".</cmd>
+                </step>
+                <step>
+                    <cmd>Leave **default** as the parent to the new node group, and **production**
+                        as the environment.</cmd>
+                </step>
+                <step>
+                    <cmd>Click **Add Group**. The **web_app_servers** group is added to the list of
+                        node groups.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="task_vpk_mmh_rq">
+        <title>Add Nodes to the New Node Group</title>
+        <shortdesc>To add nodes to a node group, you create rules that define which nodes should be
+            included in the group.</shortdesc>
+        <taskbody>
+            <steps id="steps_yxj_1nh_rq">
+                <step>
+                    <cmd>On the **Classification** page, click to open the **web_app_servers** node
+                        group.</cmd>
+                </step>
+                <step>
+                    <cmd>On the **Rules** tab, in the **Fact** field, type or select
+                        "osfamily."</cmd>
+                </step>
+                <step>
+                    <cmd>On the **Operator** drop-down list, select **is**, and in the **Value**
+                        field, type "RedHat" or "Windows" depending on the type of OS you're using
+                        for your agent.</cmd>
+                    <info>As you type in the rule, the number in the **Node matches** column changes
+                        to indicate how many nodes this rule will affect. <image
+                            id="image_nyg_gnh_rq"/></info>
+                </step>
+                <step>
+                    <cmd>Click **Add rule**, and then click the commit button.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="task_r3x_nmh_rq">
+        <title>Add Classes to the Node Group</title>
+        <shortdesc>Now that you've created a node group, you'll add classes to give the matching
+            nodes purpose.</shortdesc>
+        <taskbody>
+            <steps id="steps_ywf_g4h_rq">
+                <step>
+                    <cmd>On your **web_app_servers** page, click the **Classes** tab.</cmd>
+                </step>
+                <step>
+                    <cmd>In the **Add new class** field, if you’re a *nix user, select `apache`. If
+                        you’re a Windows user, select `registry`.</cmd>
+                </step>
+                <step>
+                    <cmd>Click **Add class**.</cmd>
+                </step>
+                <step>
+                    <cmd>In the **Parameter** box, click **Parameter name** and select a parameter
+                        from the drop-down list, such as `apache_version`. Note that for many
+                        parameters, the **Value** field is automatically populated.</cmd>
+                </step>
+                <step>
+                    <cmd>Click **Add parameter**, and then click the commit button.</cmd>
+                </step>
+            </steps>
+            <result>You can check these changes by clicking **Nodes**, then clicking one of the
+                nodes from your node group. In the **Classes** list, you'll see the `apache` class
+                with the **Source group** `web_app_servers`.</result>
+        </taskbody>
+    </task>
+    <task id="task_grn_4mh_rq">
+        <title>Create a New User Role</title>
+        <shortdesc>Add a user role so you can manage permissions for groups of users at
+            once.</shortdesc>
+        <taskbody>
+            <steps id="steps_ggs_m4h_rq">
+                <step>
+                    <cmd>In the console, click **Access Control** and then click **User
+                        Roles**.</cmd>
+                </step>
+                <step>
+                    <cmd>For **Name**, type "Web developers," and then for **Description**, type a
+                        description for the Web developers role, such as "web developers."</cmd>
+                </step>
+                <step>
+                    <cmd>Click **Add role**.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="task_stm_pmh_rq">
+        <title>Create a New User and Add the User to Your New Role</title>
+        <shortdesc>These steps demonstrate how to create a new local user. See [Adding LDAP Users to
+            PE](./rbac_user_roles.html#adding-ldap-users-to-pe) for information about adding
+            existing users from your directory service.</shortdesc>
+        <taskbody>
+            <steps id="steps_ivx_q4h_rq">
+                <step>
+                    <cmd>On the **Access Control** page, click **Users**.</cmd>
+                </step>
+                <step>
+                    <cmd>In the **Full name** field, type in a user name.</cmd>
+                </step>
+                <step>
+                    <cmd>In the **Login** field, type the user's login information.</cmd>
+                </step>
+                <step>
+                    <cmd>Click **Add local user**.</cmd>
+                    <info><b>Note</b>: When you create new local users, you need to send them a
+                        login token. Do this by clicking the new user's name in the **User** list
+                        and then on the upper-right of the user's page, click **Generate password
+                        reset**. A message opens with a link that you must copy and send to the new
+                        user.</info>
+                </step>
+                <step>
+                    <cmd>Click **User Roles** and then click **Web developers**.</cmd>
+                </step>
+                <step>
+                    <cmd>On the **Member users** tab, on the **User name** list, select the new user
+                        you created, and then click **Add user** and click the commit button.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+</task>
