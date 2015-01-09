@@ -14,4 +14,4 @@ Contains topics with little-to-no content if you just want to move stuff around 
 
 ### Useful Reading
 
-http://idratherbewriting.com/toc_linking/mapfiles/--this links to some other useful discussions about DITA features and philosophies, presented in manner suitable to humans.
+http://idratherbewriting.com/toc_linking/mapfiles/ --- this links to some other useful discussions about DITA features and philosophies, presented in manner suitable to humans.
