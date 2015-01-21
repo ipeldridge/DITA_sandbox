@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<map>
+<map chunk="to-content">
  <title>Experiment map</title>
  <topicref href="experiment_concept.dita" chunk="to-content">
   <topicref href="experiment_task.dita">

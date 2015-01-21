@@ -145,7 +145,7 @@
             configures the other nodes in a deployment. Stay logged in as root for further
             exercises.</result>
     </taskbody>
-    <related-links>
-        <link href="quick_start_login.dita#task_zwz_dqt_4q"/>
-    </related-links>
+    <task id="task_rfs_m1z_5q" conref="quick_start_login.dita">
+        <title/>
+    </task>
 </task>

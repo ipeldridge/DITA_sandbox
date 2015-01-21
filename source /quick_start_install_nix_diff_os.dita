@@ -69,7 +69,4 @@
         <postreq>After installation is complete, you need to approve your new agent node’s
             certificate request in the console. </postreq>
     </taskbody>
-    <related-links>
-        <link href="quick_start_sign_cert.dita#task_fqd_pwt_4q"/>
-    </related-links>
 </task>

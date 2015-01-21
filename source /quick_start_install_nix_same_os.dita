@@ -27,7 +27,4 @@
                 node’s certificate request in the console. </p>
         </postreq>
     </taskbody>
-    <related-links>
-        <link href="quick_start_sign_cert.dita#task_fqd_pwt_4q"/>
-    </related-links>
 </task>
