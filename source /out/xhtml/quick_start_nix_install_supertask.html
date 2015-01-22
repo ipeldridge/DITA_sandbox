@@ -10,18 +10,14 @@
 <meta name="DC.Title" content="Installing *nix Agents"/>
 <meta name="abstract" content="The following instructions are for installing Puppet agents on nodes running *nix operating systems."/>
 <meta name="description" content="The following instructions are for installing Puppet agents on nodes running *nix operating systems."/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_supertask.html"/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_install_nix_same_os.html"/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_install_nix_diff_os.html"/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_sign_cert.html"/>
 <meta name="DC.Format" content="XHTML"/>
 <meta name="DC.Identifier" content="task_snk_w45_4q"/>
 <link rel="stylesheet" type="text/css" href="commonltr.css"/>
 <title>Installing *nix Agents</title>
 </head>
-<body id="task_snk_w45_4q">
+<body>
 
-
+<div class="nested0" id="task_snk_w45_4q">
     <h1 class="title topictitle1">Installing *nix Agents</h1>
 
     
@@ -49,21 +45,7 @@
 
     </div>
 
-    <div class="related-links">
-<ul class="ullinks">
-<li class="link ulchildlink"><strong><a href="quick_start_install_nix_same_os.html">Installing Agents with the Same OS and Architecture as the Puppet Master</a></strong><br/>
-If your Puppet agent node is the same OS and architecture as the Puppet master, log         into your agent node and run the following command:</li>
-<li class="link ulchildlink"><strong><a href="quick_start_install_nix_diff_os.html">Installing Agents with Different OS and Architecture than the Puppet Master</a></strong><br/>
-If your Puppet master OS and architecture are different from the agent, follow this         example.</li>
-<li class="link ulchildlink"><strong><a href="quick_start_sign_cert.html">Approving the Certificate Request</a></strong><br/>
-</li>
-</ul>
-
-<div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="quick_start_supertask.html" title="Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE installation for actual deployment or want to learn some fundamentals of configuration management with Puppet Enterprise, this series of guides provides the steps you need to get up and running relatively quickly. We’ll walk you through the setup of a monolithic (all-in-one node) installation and show you how to automate some basic tasks that sysadmins regularly perform.">Puppet Enterprise Quick Start Guide</a></div>
-</div>
-</div>
-<div class="topic task nested1" id="task_hs3_5kf_vq">
+    <div class="topic task nested1" id="task_egs_qxg_vq">
     <h2 class="title topictitle2">Installing Agents with the Same OS and Architecture as the Puppet Master</h2>
 
     
@@ -98,7 +80,7 @@ If your Puppet master OS and architecture are different from the agent, follow t
 
 </div>
 
-    <div class="topic task nested1" id="task_e2x_wkf_vq">
+    <div class="topic task nested1" id="task_prb_sxg_vq">
     <h2 class="title topictitle2">Installing Agents with Different OS and Architecture than the Puppet Master</h2>
 
     
@@ -120,7 +102,7 @@ If your Puppet master OS and architecture are different from the agent, follow t
         </div>
 
         <ol class="ol steps"><li class="li step stepexpand">
-                <span class="ph cmd">From the console, click <strong class="ph b">Classification</strong> in the top navigation bar.<img class="image" id="task_e2x_wkf_vq__d141e37"/></span>
+                <span class="ph cmd">From the console, click <strong class="ph b">Classification</strong> in the top navigation bar.<img class="image" id="task_prb_sxg_vq__d132e37"/></span>
             </li>
 <li class="li step stepexpand">
                 <span class="ph cmd">From the  <strong class="ph b">Classification</strong> page, click the <strong class="ph b">PE Master</strong> group.</span>
@@ -132,7 +114,7 @@ If your Puppet master OS and architecture are different from the agent, follow t
                 <span class="ph cmd">In the <strong class="ph b">Add new class</strong>field, in the <strong class="ph b">Class name</strong> box, begin typing
                         <span class="q">"pe_repo,"</span> and select the class
                         <samp class="ph codeph">pe_repo::platform::debian_6_amd64</samp>, or whichever class you
-                    want, from the list of classes.<img class="image" id="task_e2x_wkf_vq__d141e77"/></span>
+                    want, from the list of classes.<img class="image" id="task_prb_sxg_vq__d132e77"/></span>
                 <div class="itemgroup info"><strong class="ph b">Note: </strong>The repo classes are listed as
                         <samp class="ph codeph">pe_repo::platform::&lt;agent_os_version_architecture&gt;</samp>.</div>
             </li>
@@ -157,7 +139,7 @@ If your Puppet master OS and architecture are different from the agent, follow t
                         <samp class="ph codeph">curl -k
                         https://&lt;master.example.com&gt;:8140/packages/current/install.bash | sudo
                         bash</samp>.</span>
-                <div class="itemgroup info"><strong class="ph b">Note</strong>: <ul class="ul" id="task_e2x_wkf_vq__d141e152">
+                <div class="itemgroup info"><strong class="ph b">Note</strong>: <ul class="ul" id="task_prb_sxg_vq__d132e152">
                         <li class="li">You can replace <samp class="ph codeph">current</samp> in the script with a specific
                             PE version number, in the form of  <samp class="ph codeph">3.x.x</samp>.</li>
 
@@ -178,35 +160,7 @@ If your Puppet master OS and architecture are different from the agent, follow t
 
 </div>
 
-    <div class="topic task nested1" id="task_h4p_ykf_vq">
-    <h2 class="title topictitle2">Approving the Certificate Request</h2>
-
-    <div class="body taskbody">
-        <div class="section context">
-            <p class="p">During installation, the agent node contacts the Puppet master and requests a
-                certificate. To add the node to the console and to start managing its configuration,
-                you need to approve its request on the Puppet master. This is most easily done via
-                the console, as follows.</p>
-
-        </div>
-
-        <ol class="ol steps"><li class="li step stepexpand">
-                <span class="ph cmd">From the console, note the pending <span class="ph uicontrol">node requests</span>
-                    indicator in the upper right corner. Click it to load a list of currently
-                    pending node requests.<img class="image" id="task_h4p_ykf_vq__d150e27"/><img class="image" id="task_h4p_ykf_vq__d150e28" src="images/request_indicator.png"/></span>
-            </li>
-<li class="li step stepexpand">
-                <span class="ph cmd">Click the <span class="ph uicontrol">Accept All</span> button to approve all the requests
-                    and add the nodes.</span>
-                <div class="itemgroup stepresult">The Puppet agents can now retrieve configurations from the master the
-                    next time Puppet runs.</div>
-            </li>
-</ol>
-
-    </div>
-
 </div>
-
 
 </body>
 </html>

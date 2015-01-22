@@ -34,26 +34,22 @@
             </note>
         </context>
     </taskbody>
-    <task id="task_jdz_mz2_vq" conref="quick_start_create_node_group.dita">
+    <task id="task_fbb_5pg_vq" conref="quick_start_create_node_group.dita">
         <title/>
     </task>
-    <task id="task_erd_pz2_vq" conref="quick_start_add_nodes_to_group.dita">
+    <task id="task_vwl_wpg_vq" conref="quick_start_add_nodes_to_group.dita">
         <title/>
     </task>
-    <task id="task_n1s_rz2_vq" conref="quick_start_add_class_to_group.dita">
+    <task id="task_vn4_ypg_vq" conref="quick_start_create_user.dita">
         <title/>
     </task>
-    <task id="task_rs2_d1f_vq" conref="quick_start_create_user.dita">
+    <task id="task_tt5_dqg_vq" conref="quick_start_create_user_add_role.dita">
         <title/>
     </task>
-    <task id="task_ph2_x1f_vq" conref="quick_start_create_user_add_role.dita">
+    <task id="task_mgv_3qg_vq" conref="quick_start_enable_user_login.dita">
         <title/>
     </task>
-    <task id="task_v5l_1bf_vq" conref="quick_start_enable_user_login.dita">
+    <task id="task_tmj_kqg_vq" conref="quick_start_user_access_node_group.dita">
         <title/>
-    </task>
-    <task id="task_evj_cbf_vq" conref="quick_start_user_access_node_group.dita">
-        <title/>
-        <related-links/>
     </task>
 </task>
