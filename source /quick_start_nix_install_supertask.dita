@@ -23,13 +23,4 @@
                     the Windows OS.</p></note>
         </context>
     </taskbody>
-    <task id="task_hs3_5kf_vq" conref="quick_start_install_nix_same_os.dita">
-        <title/>
-    </task>
-    <task id="task_e2x_wkf_vq" conref="quick_start_install_nix_diff_os.dita">
-        <title/>
-    </task>
-    <task id="task_h4p_ykf_vq" conref="quick_start_sign_cert.dita">
-        <title/>
-    </task>
 </task>

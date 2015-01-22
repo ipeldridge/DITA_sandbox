@@ -20,13 +20,4 @@
             You'll create a group called<b>apache example</b> and add the <codeph>apache</codeph>
             class to it.</context>
     </taskbody>
-    <task id="task_sl5_lyh_rq" conref="quick_start_create_apache_group.dita">
-        <title/>
-    </task>
-    <task id="task_bgk_4yh_rq" conref="quick_start_add_apache_class_example_group.dita">
-        <title/>
-    </task>
-    <task id="task_d2g_qyh_rq" conref="quick_start_edit_class_params.dita">
-        <title/>
-    </task>
 </task>
