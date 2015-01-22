@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Node Classification and Role-based Access Control Quick Start Guide"/>
+<meta name="abstract" content="In this guide, you’ll create a new node group, apply rules to the group to define the nodes it will include, and add classes to the group. You’ll also create a new user role and give the role view permissions on your node group. Finally, you’ll create a new local user, and assign a user role to that user."/>
+<meta name="description" content="In this guide, you’ll create a new node group, apply rules to the group to define the nodes it will include, and add classes to the group. You’ll also create a new user role and give the role view permissions on your node group. Finally, you’ll create a new local user, and assign a user role to that user."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="task_xvh_1z2_vq"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Node Classification and Role-based Access Control Quick Start Guide</title>
+</head>
+<body>
+
+<div class="nested0" id="task_xvh_1z2_vq">
+    <h1 class="title topictitle1">Node Classification and Role-based Access Control Quick Start Guide</h1>
+
+    
+    <div class="body taskbody"><p class="shortdesc">In this guide, you’ll create a new node group, apply rules to the group to define the
+        nodes it will include, and add classes to the group. You’ll also create a new user role and
+        give the role view permissions on your node group. Finally, you’ll create a new local user,
+        and assign a user role to that user. </p>
+
+        <div class="section prereq p">
+            <p class="p"><strong class="ph b">Prerequisites</strong>: This guide assumes you've already <a class="xref" href="quick_start_install_mono.html" title="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a split install.">installed a monolithic PE
+                    deployment</a>, and have installed at least one <a class="xref" href="quick_start_nix_install_supertask.html#task_snk_w45_4q" title="The following instructions are for installing Puppet agents on nodes running *nix operating systems.">*nix agent</a>.</p>
+
+            <p class="p">It also assumes you’ve installed a <a class="xref" href="quick_start_module_install.html" title="In this guide, you'll install the puppetlabs-apache module, a Puppet Enterprise supported module. Modules contain [classes](../puppet/3/reference/lang_classes.html), which are named chunks of puppet code and are the primary means by which Puppet Enterprise configures and manages nodes. While you can use any module available on the Forge, PE customers can take advantage of [supported modules](http://forge.puppetlabs.com/supported); these modules--designed to make common services easier--are tested, and maintained by Puppet Labs. In the [Module Writing Basics for Linux QSG](./quick_writing_nix.html) you'll learn more about modules, including customizing and writing your own modules on either [Windows](./quick_writing_windows.html) or [*nix](./quick_writing_nix.html) platforms.">*nix module</a>. Finally, you must
+                have admin permissions to complete these steps, which include assigning a user to a
+                role.</p>
+
+        </div>
+
+        <div class="section context">
+            <p class="p">The Puppet Enterprise (PE) console enables you to manage nodes groups and users. You
+                can create node groups and then assign classes to nodes through those node groups.
+                You can connect with an external directory, such as Active Directory or OpenLDAP,
+                and import users and groups, rather than creating users and groups in two locations.
+                You can also create user roles, and assign users to those roles. Roles are granted
+                permissions, such as permission to act on node groups. When you assign roles to
+                users or user groups, you are essentially granting users permissions in a more
+                organized way.</p>
+
+            <div class="note note"><span class="notetitle">Note:</span> 
+                <p class="p">This guide doesn’t attempt to connect with an OpenLDAP or Active Directory. For
+                    more information, see <a class="xref" href="https://docs.puppetlabs.com/pe/latest/rbac_intro.html" target="_blank">Working with Role-Based Access Control</a>.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<div class="topic task nested1" id="task_ey1_lmh_rq">
+    <h2 class="title topictitle2">Create a New Node Group</h2>
+
+    <div class="body taskbody">
+        <ol class="ol steps" id="task_ey1_lmh_rq__steps_lqh_wmh_rq"><li class="li step">
+                <span class="ph cmd">In the PE console, click <span class="ph uicontrol">Classification</span>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">In the <span class="ph uicontrol">Node group name</span> field, type
+                    "web_app_servers".</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">Leave <span class="ph uicontrol">default</span> as the parent to the new node group, and
+                        <span class="ph uicontrol">production</span> as the environment.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add Group</span>. The <strong class="ph b">web_app_servers</strong> group is
+                    added to the list of node groups.</span>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_vpk_mmh_rq">
+    <h2 class="title topictitle2">Add Nodes to the New Node Group</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">To add nodes to a node group, you  create rules that define which nodes should be
+        included in the group.</p>
+
+        <ol class="ol steps" id="task_vpk_mmh_rq__steps_yxj_1nh_rq"><li class="li step stepexpand">
+                <span class="ph cmd">On the <span class="ph uicontrol">Classification</span> page, click to open the
+                        <strong class="ph b">web_app_servers</strong> node group.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the <span class="ph uicontrol">Rules</span> tab, in the <span class="ph uicontrol">Fact</span>
+                    field, type or select "osfamily."</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the <span class="ph uicontrol">Operator</span> drop-down list, select
+                        <span class="ph uicontrol">is</span>, and in the <span class="ph uicontrol">Value</span> field,
+                    type "RedHat" or "Windows" depending on the type of OS you're using for your
+                    agent.</span>
+                <div class="itemgroup info">As you type in the rule, the number in the <span class="ph uicontrol">Node matches</span>
+                    column changes to indicate how many nodes this rule will affect. <img class="image" id="task_vpk_mmh_rq__image_nyg_gnh_rq" alt="Adding nodes to group"/><img class="image" id="task_vpk_mmh_rq__image_zhb_zcf_vq" src="images/assign_rule.png" height="207" width="700"/></div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add rule</span>, and then click the commit button.</span>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_r3x_nmh_rq">
+    <h2 class="title topictitle2">Add Classes to the Node Group</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">Now that you've created a node group, you'll add classes to give the matching nodes
+        purpose.</p>
+
+        <ol class="ol steps" id="task_r3x_nmh_rq__steps_ywf_g4h_rq"><li class="li step">
+                <span class="ph cmd">On your <span class="ph uicontrol">web_app_servers</span> page, click the
+                        <span class="ph uicontrol">Classes</span> tab.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">In the <span class="ph uicontrol">Add new class field</span>, if you’re a *nix user,
+                    select <samp class="ph codeph">apache</samp>. If you’re a Windows user, select
+                        <samp class="ph codeph">registry</samp>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add class</span>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">In the <span class="ph uicontrol">Parameter</span> box, click <span class="ph uicontrol">Parameter
+                        name</span> and select a parameter from the drop-down list, such as
+                        <samp class="ph codeph">apache_version</samp>. Note that for many parameters, the
+                        <span class="ph uicontrol">Value</span> field is automatically populated.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add parameter</span>, and then click the commit
+                    button.</span>
+            </li>
+</ol>
+
+        <div class="section result">You can check these changes by clicking <span class="ph uicontrol">Nodes</span>, then clicking
+            one of the nodes from your node group. In the <span class="ph uicontrol">Classes</span> list,
+            you'll see the `apache` class with the <span class="ph uicontrol">Source group</span>
+            <span class="ph uicontrol">web_app_servers</span>.</div>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_grn_4mh_rq">
+    <h2 class="title topictitle2">Create a New User Role</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">Add a user role so you can manage permissions for groups of users at
+        once.</p>
+
+        <ol class="ol steps" id="task_grn_4mh_rq__steps_ggs_m4h_rq"><li class="li step">
+                <span class="ph cmd">In the console, click <span class="ph uicontrol">Access Control</span> and then click
+                        <span class="ph uicontrol">User Roles</span>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">For <span class="ph uicontrol">Name</span>, type "Web developers," and then for
+                        <span class="ph uicontrol">Description</span>, type a description for the Web
+                    developers role, such as "web developers."</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add role</span>.</span>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_stm_pmh_rq">
+    <h2 class="title topictitle2">Create a New User and Add the User to Your New Role</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">These steps demonstrate how to create a new local user. See [Adding LDAP Users to
+        PE](./rbac_user_roles.html#adding-ldap-users-to-pe) for information about adding existing
+        users from your directory service.</p>
+
+        <ol class="ol steps" id="task_stm_pmh_rq__steps_ivx_q4h_rq"><li class="li step stepexpand">
+                <span class="ph cmd">On the <span class="ph uicontrol">Access Control</span> page, click
+                        <span class="ph uicontrol">Users</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">In the <span class="ph uicontrol">Full name</span> field, type in a user name.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">In the <span class="ph uicontrol">Login</span> field, type the user's login
+                    information.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add local user</span>.</span>
+                <div class="itemgroup info"><strong class="ph b">Note</strong>: When you create new local users, you need to send them a login
+                    token. Do this by clicking the new user's name in the
+                        <span class="ph uicontrol">User</span> list and then on the upper-right of the user's
+                    page, click <span class="ph uicontrol">Generate password reset</span>. A message opens with
+                    a link that you must copy and send to the new user.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">User Roles</span> and then click <span class="ph uicontrol">Web
+                        developers</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the <span class="ph uicontrol">Member users</span> tab, on the <span class="ph uicontrol">User
+                        name</span> list, select the new user you created, and then click
+                        <span class="ph uicontrol">Add user</span> and click the commit button.</span>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_grq_43z_5q">
+    <h2 class="title topictitle2">Enable User to Log In</h2>
+
+    <div class="body taskbody">
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">In the <span class="ph uicontrol">User</span> list, click the new local user. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the upper-right of the page, click <span class="ph uicontrol">Generate password
+                        reset</span>. </span>
+                <div class="itemgroup stepresult">A Password reset link message box opens.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Copy the link provided in the message and send it to the new user.</span>
+            </li>
+</ol>
+
+    </div>
+
+</div>
+<div class="topic task nested1" id="task_w2x_jjz_5q">
+    <h2 class="title topictitle2">Give Your New Role Access to the Node Group You Created</h2>
+
+    <div class="body taskbody">
+        <ol class="ol steps"><li class="li step">
+                <span class="ph cmd">From the <span class="ph uicontrol">Web developer</span> role page, click the
+                        <span class="ph uicontrol">Permissions</span> tab.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">In the <span class="ph uicontrol">Type</span> box, select <span class="ph uicontrol">Node
+                        groups</span>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">In the <span class="ph uicontrol">Permission</span> box, select
+                        <span class="ph uicontrol">View</span>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">In the <span class="ph uicontrol">Object box</span>, select
+                        <span class="ph uicontrol">web-app_servers</span>.</span>
+            </li>
+<li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add permission</span>, and then click the commit
+                    button.</span>
+            </li>
+</ol>
+
+        <div class="section result">Now, you have given members of the <strong class="ph b">Web developers</strong> role permission to view the
+                <strong class="ph b">web_app_servers</strong> node group.<img class="image" id="task_w2x_jjz_5q__image_ydb_tjz_5q" alt="Web developers role permissions"/><br/><img class="image" id="task_w2x_jjz_5q__image_w3j_qbf_vq" src="images/role_views_node_group.png" height="292" width="714"/><br/></div>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /temp/xhtml?><?workdir-uri file:/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source%20/temp/xhtml/?><?path2project?><?path2project-uri ./?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="task_xwm_nl4_4q" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="task:1;3:28">
+    <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="title:1;4:12">PE Install Quick Start Guide</title>
+    <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="shortdesc:1;5:16">To get you started using Puppet Enterprise (PE) relatively quickly and efficiently,
+        this guide walks you through the steps of a monolithic install. A monolithic deployment is
+        best suited for users who want to evaluate PE, or for users managing a small number of
+        puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a
+        split install. </shortdesc>
+    <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="taskbody:1;10:15">
+        <prereq id="link" class="- topic/section task/prereq " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="prereq:1;11:27">
+            <p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="p:1;12:16"><b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="b:1;12:19">Prerequisites</b>:</p>
+            <ul id="ul_lcg_4n4_4q" class="- topic/ul " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="ul:1;13:36">
+                <li class="- topic/li " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="li:1;14:21">See the <xref format="html" href="https://docs.puppetlabs.com/pe/latest/install_system_requirements.html#evaluation-environment" class="- topic/xref " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="xref:1;16:26"><?ditaot usertext?>system requirements</xref> to ensure your hardware needs are met.</li>
+                <li class="- topic/li " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="li:2;17:21">Make sure that DNS is properly configured on the machines you're installing PE
+                    on. All nodes must <b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="b:2;18:43">know their own hostnames</b>. This can be done by properly
+                    configuring reverse DNS on your local DNS server, or by setting the hostname
+                    explicitly. Setting the hostname usually involves the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:1;20:83">hostname</codeph>
+                    command and one or more configuration files, while the exact method varies by
+                    platform. In addition, all nodes must be able to <b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="b:3;22:73">reach each other by
+                    name</b>.  This can be done with a local DNS server, or by editing the
+                        <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:2;24:33">/etc/hosts</codeph> file on each node to point to the proper IP
+                    addresses.</li>
+                <li class="- topic/li " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="li:3;26:21">Please ensure that port 3000 is reachable, as the web-based installer uses this
+                    port. You can close this port when the installation is complete.</li>
+            </ul>
+        </prereq>
+        <context class="- topic/section task/context " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="context:1;30:18">A monolithic PE deployment entails installing the puppet master, the PE console,
+            and PuppetDB all on one node. Puppet agent nodes are installed later as part of the
+            [agent installation quick start guide for *nix](./quick_start_install_agents_nix.html)
+            or the [agent installation quick start guide for
+            Windows](./quick_start_install_agents_windows.html). For more information about the
+            components that make up your PE deployment, visit the [installation
+            overview](./install_basic.html) in the PE docs.</context>
+        <steps class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="steps:1;37:16">
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:1;38:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:1;39:22">Review the Prerequisites.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:2;41:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:2;42:22"><xref href="https://docs.puppetlabs.com/pe/latest/install_basic.html" format="html" class="- topic/xref " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="xref:2;43:39"><?ditaot usertext?>Download and verify the appropriate PE tarball</xref>, and, if
+                    needed, copy the tarball to the machine on which you'll be installing PE.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="info:1;45:23">Be sure to download the full PE tarball, not the agent-only tarball. The
+                    agent-only tarball is used for <xref format="html" href="https://docs.puppetlabs.com/pe/latest/install_agents.html#installing-agents-using-your-package-management-tools" class="- topic/xref " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="xref:3;48:26"><?ditaot usertext?>package management-based agent installation</xref> which is not covered by
+                    this guide.</info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:3;51:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:3;52:22">Unpack the tarball. (Run <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:3;52:55">tar -xf &lt;tarball&gt;</codeph>)</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:4;54:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:4;55:22">From the PE installer directory, run <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:4;55:67">sudo
+                        ./puppet-enterprise-installer</codeph>.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:5;58:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:5;59:22">When prompted, choose "Yes" to install the setup packages. (If you choose "No,"
+                    the installer will exit.)</cmd>
+                <stepresult class="- topic/itemgroup task/stepresult " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="stepresult:1;61:29"> At this point, the PE installer will start a web server and provide a
+                    web address: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:5;62:42">https://&lt;install platform hostname&gt;:3000</codeph>.
+                    Please ensure that port 3000 is reachable. If necessary, you can close port 3000
+                    when the installation is complete. Also be sure to use
+                        <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:6;65:33">https</codeph>.<p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="p:2;65:51">Leave your terminal connection open until the
+                        installation is complete; otherwise the installation will
+                    fail.</p></stepresult>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:6;69:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:6;70:22">Copy the address into your browser.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:7;72:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:7;73:22">When prompted, accept the security request in your browser.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="info:2;74:23">The web-based installation uses a default SSL certificate; you’ll have to add
+                    a security exception in order to access the web-based installer. This is safe to
+                    do.</info>
+                <stepresult class="- topic/itemgroup task/stepresult " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="stepresult:2;77:29">You'll be taken to the installer start page.</stepresult>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:8;79:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:8;80:22">On the start page, click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:1;80:58">Let's get started</uicontrol>.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:9;82:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:9;83:22">Next, you'll be asked to choose your deployment type. Select
+                        <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:2;84:36">Monolithic</uicontrol>.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:10;86:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:10;87:22">Choose to install the Puppet master component on the server you're running the
+                    installer from.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:11;90:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:11;91:22">Provide the following information about the puppet master server:</cmd>
+                <substeps id="substeps_v5t_s44_4q" class="- topic/ol task/substeps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="substeps:1;92:52">
+                    <substep class="- topic/li task/substep " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="substep:1;93:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:12;94:30">
+                            <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:3;95:40">Puppet master FQDN</uicontrol>: provide the fully qualified
+                            domain name of the server you're installing PE on; for example,
+                                <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:7;97:41">master.example.com</codeph>.</cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="substep:2;99:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:13;100:30"><uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:4;100:41">DNS aliases</uicontrol>: provide a comma-separated list of
+                            aliases agent nodes can use to reach to the master; for example
+                                <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="codeph:8;102:41">master</codeph>.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:12;106:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:14;107:22">When prompted about database support, choose the default option
+                        <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:5;108:36">Install PostgreSQL for me</uicontrol>.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:13;110:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:15;111:22">Provide the following information about the PE console administrator
+                    user:</cmd>
+                <substeps id="substeps_sfg_hp4_4q" class="- topic/ol task/substeps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="substeps:2;113:52">
+                    <substep class="- topic/li task/substep " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="substep:3;114:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:16;115:30"><uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:6;115:41">Console superuser password</uicontrol>: create a password
+                            for the console login; the password must be at least eight
+                            characters.</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="info:3;118:31">The user name for the console administrator user is
+                                <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:7;119:44">admin</uicontrol>.</info>
+                    </substep>
+                </substeps>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:14;123:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:17;124:22">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:8;124:39"> Submit</uicontrol>.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:15;126:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:18;127:22">On the confirm plan page, review the information you provided, and, if it looks
+                    correct, click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:9;128:47">Continue</uicontrol>.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="info:4;129:23"> If you need to make any changes, click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:10;129:74">Go Back</uicontrol> and
+                    make whatever changes are required.</info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="step:16;132:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="cmd:19;133:22">On the validation page, the installer will verify various configuration
+                    elements (e.g., if SSH credentials are correct, if there is enough disk space,
+                    and if the OS is the same for the various components). If there aren't any
+                    outstanding issues, click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="uicontrol:11;136:58">Deploy now</uicontrol>.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="info:5;137:23">The installer will then install and configure Puppet Enterprise. It may also
+                    need to install additional packages from your OS's repository. <b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="b:4;138:87">This process
+                        may take up to 10-15 minutes.</b> When the installation is complete, the
+                    installer script that was running in the terminal will close itself.</info>
+            </step>
+        </steps>
+        <result class="- topic/section task/result " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="result:1;143:17">You have now installed the puppet master node. As indicated by the installer, the
+            puppet master node is also an agent node, and can configure itself the same way it
+            configures the other nodes in a deployment. Stay logged in as root for further
+            exercises.</result>
+    </taskbody>
+    <related-links class="- topic/related-links " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="related-links:1;148:20"><linkpool class="- topic/linkpool " xtrc="topicref:2;6:51" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:1;5:73" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="quick_start_supertask.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Puppet Enterprise Quick Start Guide</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE         installation for actual deployment or want to learn some fundamentals of configuration         management with Puppet Enterprise, this series of guides provides the steps you need to get         up and running relatively quickly. We’ll walk you through the setup of a monolithic         (all-in-one node) installation and show you how to automate some basic tasks that sysadmins         regularly perform.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:1;5:73" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="quick_start_supertask.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Puppet Enterprise Quick Start Guide</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE         installation for actual deployment or want to learn some fundamentals of configuration         management with Puppet Enterprise, this series of guides provides the steps you need to get         up and running relatively quickly. We’ll walk you through the setup of a monolithic         (all-in-one node) installation and show you how to automate some basic tasks that sysadmins         regularly perform.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:3;7:44" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="quick_start_login.dita" role="next"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Log in to the PE Console</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">To log in to the console, you can select the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrc="uicontrol:1;5:72" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_login.dita">Start Using Puppet Enterprise             Now</uicontrol>button that appears at the end of the web-based installer or follow the         steps below.</desc></link></linkpool>
+        <link href="quick_start_login.dita#task_zwz_dqt_4q" class="- topic/link " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_install_mono.dita" xtrc="link:1;149:62" type="task"><?ditaot gentext?><linktext class="- topic/linktext ">Log in to the PE Console</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">To log in to the console, you can select the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_login.dita" xtrc="uicontrol:1;5:72">Start Using Puppet Enterprise             Now</uicontrol>button that appears at the end of the web-based installer or follow the         steps below.</desc></link>
+    </related-links>
+</task>

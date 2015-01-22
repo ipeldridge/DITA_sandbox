@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_w2x_jjz_5q">
+    <title>Give Your New Role Access to the Node Group You Created</title>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>From the <uicontrol>Web developer</uicontrol> role page, click the
+                        <uicontrol>Permissions</uicontrol> tab.</cmd>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Type</uicontrol> box, select <uicontrol>Node
+                        groups</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Permission</uicontrol> box, select
+                        <uicontrol>View</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Object box</uicontrol>, select
+                        <uicontrol>web-app_servers</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Add permission</uicontrol>, and then click the commit
+                    button.</cmd>
+            </step>
+        </steps>
+        <result>Now, you have given members of the <b>Web developers</b> role permission to view the
+                <b>web_app_servers</b> node group.<image id="image_ydb_tjz_5q"
+                alt="Web developers role permissions"/><image
+                href="images/role_views_node_group.png" id="image_w3j_qbf_vq" placement="break"
+                scale="50"/></result>
+    </taskbody>
+</task>

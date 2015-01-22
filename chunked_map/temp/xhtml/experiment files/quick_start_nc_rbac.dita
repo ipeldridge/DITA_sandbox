@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /temp/xhtml/experiment files?><?workdir-uri file:/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source%20/temp/xhtml/experiment%20files/?><?path2project ../?><?path2project-uri ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="task_vlf_mlh_rq" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="task:1;3:28">
+    <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="title:1;4:12">Node Classification and RBAC Quick Start Guide</title>
+    <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="shortdesc:1;5:16">In this guide, you'll create a new node group, apply rules to the group to define the
+        nodes it will include, and add classes to the group. You'll also create a new user role and
+        give the role view permissions on your node group. Finally, you’ll create a new local user,
+        and assign a user role to that user. </shortdesc>
+    <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="taskbody:1;9:15">
+        <prereq class="- topic/section task/prereq " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="prereq:1;10:17"><b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="b:1;10:20">Prerequisites</b>: This guide assumes you've already [installed a monolithic PE
+            deployment](./quick_start_install_mono.html), and have installed at least one [*nix
+            agent node](./quick_start_install_agents_nix.html) or one [Windows
+                node](./quick_start_install_agents_windows.html).<p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="p:1;13:69">It also assumes you’ve installed
+                a [*nix](./quick_start_module_install_nix.html) or
+                [Windows](./quick_start_module_install_windows.html) module. Finally, you must have
+                admin permissions to complete these steps, which include assigning a user to a
+                role.</p></prereq>
+        <context class="- topic/section task/context " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="context:1;18:18">
+            <p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="p:2;19:16">The Puppet Enterprise (PE) console enables you to manage nodes groups and users. You
+                can create node groups and then assign classes to nodes through those node groups.
+                You can connect with an external directory, such as Active Directory or OpenLDAP,
+                and import users and groups, rather than creating users and groups in two locations.
+                You can also create user roles, and assign users to those roles. Roles are granted
+                permissions, such as permission to act on node groups. When you assign roles to
+                users or user groups, you are essentially granting users permissions in a more
+                organized way.</p>
+            <p class="- topic/p " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="p:3;27:16">This guide doesn't attempt to connect with an OpenLDAP or Active Directory. For more
+                information, see [Working with Role-Based Access Control](./rbac_intro.html).</p>
+            <note class="- topic/note " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="note:1;29:19">Users and user groups are not currently deletable. And roles aren’t deletable via
+                the console, only by API. Therefore, we recommend that you try out these steps on a
+                virtual machine.</note>
+        </context>
+    </taskbody>
+    <related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:9;14:65" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:1;5:73" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="../quick_start_supertask.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Puppet Enterprise Quick Start Guide</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE         installation for actual deployment or want to learn some fundamentals of configuration         management with Puppet Enterprise, this series of guides provides the steps you need to get         up and running relatively quickly. We’ll walk you through the setup of a monolithic         (all-in-one node) installation and show you how to automate some basic tasks that sysadmins         regularly perform.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:7;12:48" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="../quick_start_sign_cert.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Approving the Certificate Request</linktext></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:10;15:53" xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /quick_start_map.ditamap" href="../quick_start_module_install.dita" role="next"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Module Installation Quick Start Guide</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">In this guide, you'll install the puppetlabs-apache module, a Puppet Enterprise         supported module. Modules contain [classes](../puppet/3/reference/lang_classes.html), which         are named chunks of puppet code and are the primary means by which Puppet Enterprise         configures and manages nodes. While you can use any module available on the Forge, PE         customers can take advantage of [supported modules](http://forge.puppetlabs.com/supported);         these modules--designed to make common services easier--are tested, and maintained by Puppet         Labs. In the [Module Writing Basics for Linux QSG](./quick_writing_nix.html) you'll learn         more about modules, including customizing and writing your own modules on either         [Windows](./quick_writing_windows.html) or [*nix](./quick_writing_nix.html)         platforms.</desc></link></linkpool></related-links>
+<task id="task_ey1_lmh_rq" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="task:2;34:32">
+        <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="title:2;35:16">Create a New Node Group</title>
+        <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="taskbody:2;36:19">
+            <steps id="steps_lqh_wmh_rq" class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="steps:1;37:42">
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:1;38:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:1;39:26">In the PE console, click **Classification**.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:2;41:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:2;42:26">In the **Node group name** field, type "web_app_servers".</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:3;44:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:3;45:26">Leave **default** as the parent to the new node group, and **production**
+                        as the environment.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:4;48:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:4;49:26">Click **Add Group**. The **web_app_servers** group is added to the list of
+                        node groups.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="task_vpk_mmh_rq" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="task:3;55:32">
+        <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="title:3;56:16">Add Nodes to the New Node Group</title>
+        <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="shortdesc:2;57:20">To add nodes to a node group, you create rules that define which nodes should be
+            included in the group.</shortdesc>
+        <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="taskbody:3;59:19">
+            <steps id="steps_yxj_1nh_rq" class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="steps:2;60:42">
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:5;61:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:5;62:26">On the **Classification** page, click to open the **web_app_servers** node
+                        group.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:6;65:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:6;66:26">On the **Rules** tab, in the **Fact** field, type or select
+                        "osfamily."</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:7;69:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:7;70:26">On the **Operator** drop-down list, select **is**, and in the **Value**
+                        field, type "RedHat" or "Windows" depending on the type of OS you're using
+                        for your agent.</cmd>
+                    <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="info:1;73:27">As you type in the rule, the number in the **Node matches** column changes
+                        to indicate how many nodes this rule will affect. <image id="image_nyg_gnh_rq" placement="inline" class="- topic/image " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="image:1;75:52"/></info>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:8;77:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:8;78:26">Click **Add rule**, and then click the commit button.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="task_r3x_nmh_rq" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="task:4;83:32">
+        <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="title:4;84:16">Add Classes to the Node Group</title>
+        <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="shortdesc:3;85:20">Now that you've created a node group, you'll add classes to give the matching
+            nodes purpose.</shortdesc>
+        <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="taskbody:4;87:19">
+            <steps id="steps_ywf_g4h_rq" class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="steps:3;88:42">
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:9;89:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:9;90:26">On your **web_app_servers** page, click the **Classes** tab.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:10;92:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:10;93:26">In the **Add new class** field, if you’re a *nix user, select `apache`. If
+                        you’re a Windows user, select `registry`.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:11;96:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:11;97:26">Click **Add class**.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:12;99:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:12;100:26">In the **Parameter** box, click **Parameter name** and select a parameter
+                        from the drop-down list, such as `apache_version`. Note that for many
+                        parameters, the **Value** field is automatically populated.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:13;104:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:13;105:26">Click **Add parameter**, and then click the commit button.</cmd>
+                </step>
+            </steps>
+            <result class="- topic/section task/result " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="result:1;108:21">You can check these changes by clicking **Nodes**, then clicking one of the
+                nodes from your node group. In the **Classes** list, you'll see the `apache` class
+                with the **Source group** `web_app_servers`.</result>
+        </taskbody>
+    </task>
+    <task id="task_grn_4mh_rq" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="task:5;113:32">
+        <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="title:5;114:16">Create a New User Role</title>
+        <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="shortdesc:4;115:20">Add a user role so you can manage permissions for groups of users at
+            once.</shortdesc>
+        <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="taskbody:5;117:19">
+            <steps id="steps_ggs_m4h_rq" class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="steps:4;118:42">
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:14;119:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:14;120:26">In the console, click **Access Control** and then click **User
+                        Roles**.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:15;123:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:15;124:26">For **Name**, type "Web developers," and then for **Description**, type a
+                        description for the Web developers role, such as "web developers."</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:16;127:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:16;128:26">Click **Add role**.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+    <task id="task_stm_pmh_rq" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="task:6;133:32">
+        <title class="- topic/title " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="title:6;134:16">Create a New User and Add the User to Your New Role</title>
+        <shortdesc class="- topic/shortdesc " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="shortdesc:5;135:20">These steps demonstrate how to create a new local user. See [Adding LDAP Users to
+            PE](./rbac_user_roles.html#adding-ldap-users-to-pe) for information about adding
+            existing users from your directory service.</shortdesc>
+        <taskbody class="- topic/body task/taskbody " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="taskbody:6;138:19">
+            <steps id="steps_ivx_q4h_rq" class="- topic/ol task/steps " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="steps:5;139:42">
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:17;140:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:17;141:26">On the **Access Control** page, click **Users**.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:18;143:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:18;144:26">In the **Full name** field, type in a user name.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:19;146:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:19;147:26">In the **Login** field, type the user's login information.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:20;149:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:20;150:26">Click **Add local user**.</cmd>
+                    <info class="- topic/itemgroup task/info " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="info:2;151:27"><b class="+ topic/ph hi-d/b " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="b:2;151:30">Note</b>: When you create new local users, you need to send them a
+                        login token. Do this by clicking the new user's name in the **User** list
+                        and then on the upper-right of the user's page, click **Generate password
+                        reset**. A message opens with a link that you must copy and send to the new
+                        user.</info>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:21;157:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:21;158:26">Click **User Roles** and then click **Web developers**.</cmd>
+                </step>
+                <step class="- topic/li task/step " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="step:22;160:23">
+                    <cmd class="- topic/ph task/cmd " xtrf="/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source /experiment files/quick_start_nc_rbac.dita" xtrc="cmd:22;161:26">On the **Member users** tab, on the **User name** list, select the new user
+                        you created, and then click **Add user** and click the commit button.</cmd>
+                </step>
+            </steps>
+        </taskbody>
+    </task>
+</task>

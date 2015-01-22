@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_cyz_2xg_rq">
+    <title>Create Apache Example Group</title>
+    <shortdesc>In this procedure, you'll create the <b>apache_example</b> group to later add the
+            <codeph>apache</codeph> class to it. </shortdesc>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>From the console, click <uicontrol>Classification</uicontrol> in the navigation
+                    bar. </cmd>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Node group name</uicontrol> field, name your group (e.g.,
+                        <b>apache_example</b>.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Add group</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>Click the <b>apache_example</b> group. </cmd>
+            </step>
+            <step>
+                <cmd>From the <uicontrol>Rules</uicontrol> tab, in the
+                        <uicontrol>Certname</uicontrol> area, in the <uicontrol>Node
+                        name</uicontrol> field, enter the name of the PE-managed node you'd like to
+                    add to this group.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Pin node</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Commit 1 change</uicontrol>.<image id="image_o1d_fzg_rq"
+                        placement="break" href="images/apache_add_group.png" scope="local"
+                        scale="50" align="left"/></cmd>
+            </step>
+            <step>
+                <cmd>Repeat steps 5 - 7 for any additional nodes you want to add.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

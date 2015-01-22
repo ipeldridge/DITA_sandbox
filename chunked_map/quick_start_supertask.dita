@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_trs_2m5_4q">
+    <title>Puppet Enterprise Quick Start Guide</title>
+    <shortdesc>Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE
+        installation for actual deployment or want to learn some fundamentals of configuration
+        management with Puppet Enterprise, this series of guides provides the steps you need to get
+        up and running relatively quickly. We’ll walk you through the setup of a monolithic
+        (all-in-one node) installation and show you how to automate some basic tasks that sysadmins
+        regularly perform.</shortdesc>
+    <taskbody>
+        <context>
+            <p>The following guides present tasks in the order that you would most likely perform
+                them. See the prerequisite sections in each guide to ensure you have the correct
+                setup to perform the steps as they're provided:</p>
+        </context>
+    </taskbody>
+</task>

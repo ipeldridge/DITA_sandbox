@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Editing Class Parameters in the PE console"/>
+<meta name="abstract" content="You can use the PE console to set or edit the values of a class' parameters without needing to edit the module's code directly. In this procedure, you will use the PE conosle to edit parameters on the apache class."/>
+<meta name="description" content="You can use the PE console to set or edit the values of a class' parameters without needing to edit the module's code directly. In this procedure, you will use the PE conosle to edit parameters on the apache class."/>
+<meta name="DC.Relation" scheme="URI" content="quick_start_adding_classes.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="task_wgy_jbh_rq"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Editing Class Parameters in the PE console</title>
+</head>
+<body id="task_wgy_jbh_rq">
+
+
+    <h1 class="title topictitle1">Editing Class Parameters in the PE console</h1>
+
+    
+    <div class="body taskbody"><p class="shortdesc"> You can use the PE console to set or edit the values of a class' parameters without
+        needing to edit the module's code directly.  In this procedure, you will use the PE conosle
+        to edit parameters on the <samp class="ph codeph">apache</samp> class. </p>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">From the console, click <span class="ph uicontrol">Classification</span> in the navigation
+                    bar.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">From the <span class="ph uicontrol">Classification page</span>, click the
+                        <strong class="ph b">apache_example</strong> group.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Classes</span> tab, and find <samp class="ph codeph">apache</samp>
+                    in the list of classes. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">From the <span class="ph uicontrol">Parameter name</span> drop-down list, choose the
+                    parameter you'd like to edit. (For this example, we will use
+                        <samp class="ph codeph">docroot</samp>. </span>
+                <div class="itemgroup info"><strong class="ph b">Note</strong>: The grey text that appears as values for some parameters is the
+                    default value, which can be either a literal value or a Puppet variable. You can
+                    restore this value by selecting <span class="ph uicontrol">Discard Changes</span> after you
+                    have added the parameter.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">In the <span class="ph uicontrol">Value</span> field, enter
+                    <samp class="ph codeph">/var/www/</samp>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add parameter</span>. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Commit 1 change</span>. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Navigate to the <strong class="ph b">Live Management</strong> page, and select the <span class="ph uicontrol">Control
+                        Puppet</span> tab. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">runonce</span> and then <span class="ph uicontrol">Run</span> to
+                    trigger a Puppet run to have PE create the new configuration.</span>
+            </li>
+</ol>
+
+    </div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="quick_start_adding_classes.html" title="In this guide you'll use the puppetlabs-apache module to launch the default Apache virtual host.">Adding Classes to Agent Nodes</a></div>
+</div>
+</div>
+
+</body>
+</html>

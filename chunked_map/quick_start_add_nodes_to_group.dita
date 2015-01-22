@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_vpk_mmh_rq">
+    <title>Add Nodes to the New Node Group</title>
+    <shortdesc>To add nodes to a node group, you  create rules that define which nodes should be
+        included in the group.</shortdesc>
+    <taskbody>
+        <steps id="steps_yxj_1nh_rq">
+            <step>
+                <cmd>On the <uicontrol>Classification</uicontrol> page, click to open the
+                        <b>web_app_servers</b> node group.</cmd>
+            </step>
+            <step>
+                <cmd>On the <uicontrol>Rules</uicontrol> tab, in the <uicontrol>Fact</uicontrol>
+                    field, type or select "osfamily."</cmd>
+            </step>
+            <step>
+                <cmd>On the <uicontrol>Operator</uicontrol> drop-down list, select
+                        <uicontrol>is</uicontrol>, and in the <uicontrol>Value</uicontrol> field,
+                    type "RedHat" or "Windows" depending on the type of OS you're using for your
+                    agent.</cmd>
+                <info>As you type in the rule, the number in the <uicontrol>Node matches</uicontrol>
+                    column changes to indicate how many nodes this rule will affect. <image
+                        id="image_nyg_gnh_rq" alt="Adding nodes to group"/><image
+                        href="images/assign_rule.png" id="image_zhb_zcf_vq" scale="50"/></info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Add rule</uicontrol>, and then click the commit button.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>
