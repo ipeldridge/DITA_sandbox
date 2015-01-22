@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_wgy_jbh_rq">
+    <title>Editing Class Parameters in the PE console</title>
+    <shortdesc> You can use the PE console to set or edit the values of a class' parameters without
+        needing to edit the module's code directly.  In this procedure, you will use the PE conosle
+        to edit parameters on the <codeph>apache</codeph> class. </shortdesc>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>From the console, click <uicontrol>Classification</uicontrol> in the navigation
+                    bar.</cmd>
+            </step>
+            <step>
+                <cmd>From the <uicontrol>Classification page</uicontrol>, click the
+                        <b>apache_example</b> group.</cmd>
+            </step>
+            <step>
+                <cmd>Click the <uicontrol>Classes</uicontrol> tab, and find <codeph>apache</codeph>
+                    in the list of classes. </cmd>
+            </step>
+            <step>
+                <cmd>From the <uicontrol>Parameter name</uicontrol> drop-down list, choose the
+                    parameter you'd like to edit. (For this example, we will use
+                        <codeph>docroot</codeph>. </cmd>
+                <info><b>Note</b>: The grey text that appears as values for some parameters is the
+                    default value, which can be either a literal value or a Puppet variable. You can
+                    restore this value by selecting <uicontrol>Discard Changes</uicontrol> after you
+                    have added the parameter.</info>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Value</uicontrol> field, enter
+                    <codeph>/var/www/</codeph>.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Add parameter</uicontrol>. </cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Commit 1 change</uicontrol>. </cmd>
+            </step>
+            <step>
+                <cmd>Navigate to the <b>Live Management</b> page, and select the <uicontrol>Control
+                        Puppet</uicontrol> tab. </cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>runonce</uicontrol> and then <uicontrol>Run</uicontrol> to
+                    trigger a Puppet run to have PE create the new configuration.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

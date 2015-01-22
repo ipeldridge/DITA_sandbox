@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_zwz_dqt_4q">
+    <title>Log in to the PE Console</title>
+    <shortdesc>To log in to the console, you can select the <uicontrol>Start Using Puppet Enterprise
+            Now</uicontrol>button that appears at the end of the web-based installer or follow the
+        steps below.</shortdesc>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd><b>On your control workstation</b>, open a web browser and point it to the
+                    address supplied by the installer; for example,
+                        <codeph>https://master.example.com</codeph>.</cmd>
+                <stepresult>You will receive a warning about an untrusted certificate. This is
+                    because you were the signing authority for the console's certificate, and your
+                    Puppet Enterprise deployment is not known to the major browser vendors as a
+                    valid signing authority. <b>Ignore the warning and accept the certificate</b>.
+                    The steps to do this <xref format="html"
+                        href="https://docs.puppetlabs.com/pe/latest/console_accessing.html">vary by
+                        browser</xref>.</stepresult>
+            </step>
+            <step>
+                <cmd>On the login page for the console, log in with the username <b>admin</b> and
+                    the password you provided when installing the puppet master.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

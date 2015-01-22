@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_ey1_lmh_rq">
+    <title>Create a New Node Group</title>
+    <taskbody>
+        <steps id="steps_lqh_wmh_rq">
+            <step>
+                <cmd>In the PE console, click <uicontrol>Classification</uicontrol>.</cmd>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Node group name</uicontrol> field, type
+                    "web_app_servers".</cmd>
+            </step>
+            <step>
+                <cmd>Leave <uicontrol>default</uicontrol> as the parent to the new node group, and
+                        <uicontrol>production</uicontrol> as the environment.</cmd>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Add Group</uicontrol>. The <b>web_app_servers</b> group is
+                    added to the list of node groups.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

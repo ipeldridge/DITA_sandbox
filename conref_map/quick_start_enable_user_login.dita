@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_grq_43z_5q">
+    <title>Enable User to Log In</title>
+    <taskbody>
+        <steps>
+            <step>
+                <cmd>In the <uicontrol>User</uicontrol> list, click the new local user. </cmd>
+            </step>
+            <step>
+                <cmd>On the upper-right of the page, click <uicontrol>Generate password
+                        reset</uicontrol>. </cmd>
+                <stepresult>A Password reset link message box opens.</stepresult>
+            </step>
+            <step>
+                <cmd>Copy the link provided in the message and send it to the new user.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>
