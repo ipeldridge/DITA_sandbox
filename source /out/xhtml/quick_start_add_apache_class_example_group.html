@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Adding Apache Class to Example Group"/>
+<meta name="abstract" content="In this procedure, you'll add the apache class to the apache_example group you created in the previous task."/>
+<meta name="description" content="In this procedure, you'll add the apache class to the apache_example group you created in the previous task."/>
+<meta name="DC.Relation" scheme="URI" content="quick_start_adding_classes.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="task_d1m_tzg_rq"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Adding Apache Class to Example Group</title>
+</head>
+<body id="task_d1m_tzg_rq">
+
+
+    <h1 class="title topictitle1">Adding Apache Class to Example Group</h1>
+
+    
+    <div class="body taskbody"><p class="shortdesc">In this procedure, you'll add the <samp class="ph codeph">apache</samp> class to the
+            <strong class="ph b">apache_example</strong> group you created in the previous task.</p>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Classes</span> tab. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">In the <span class="ph uicontrol">Class name</span> field, begin typing "apache," and
+                    select it from the autocomplete list. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add class</span> and then click <span class="ph uicontrol">Commit 1
+                        change</span>.</span>
+                <div class="itemgroup stepresult">The <samp class="ph codeph">apache</samp> class now appears in the list of classes for
+                    your agent node. You can see this list by clicking <span class="ph uicontrol">Nodes</span>
+                    and then clicking your node in the <span class="ph uicontrol">Nodes</span> list. A page
+                    opens with your node's details.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">From your agent node, navigate to <samp class="ph codeph">/var/www/html</samp>, and create a
+                    file named <samp class="ph codeph">index.html</samp>. </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Open <samp class="ph codeph">index.html</samp> with the text editor of your choice and fill
+                    it with some content (e.g., "Hello World"). </span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">From the console, navigate to the <span class="ph uicontrol">Live Management</span> page,
+                    and select the <span class="ph uicontrol">Control Puppet</span>.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">runonce</span> and then <span class="ph uicontrol">Run</span>. This
+                    will configure the node using the newly-assigned class. Wait one or two
+                    minutes.</span>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">Open a browser and enter the IP address for the agent node, adding port 80 on
+                    the end (e.g., <samp class="ph codeph">www.myagentnodeIP:80</samp>).</span>
+                <div class="itemgroup stepresult"/>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">You will see the contents of <samp class="ph codeph">/var/www/html/index.html</samp>
+                    displayed.</span>
+            </li>
+</ol>
+
+        <div class="section result"><strong class="ph b">Result</strong>: Puppet Enterprise is now managing the default Apache vhost on your
+            agent node. At this point, you can check out the Apache "ReadMe" on the Forge to explore
+            options for managing your Apache instances as needed. The <a class="xref" href="https://docs.puppetlabs.com/pe/latest/quick_writing_nix.html" target="_blank">*Nix module writing QSG</a>  (./quick_writing_nix.html) discusses
+            how to write your own class that manages a web app running on an Apache virtual
+            host.</div>
+
+    </div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="quick_start_adding_classes.html" title="In this guide you'll use the puppetlabs-apache module to launch the default Apache virtual host.">Adding Classes to Agent Nodes</a></div>
+</div>
+</div>
+
+</body>
+</html>

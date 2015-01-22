@@ -1,9 +1,9 @@
-#Thu Jan 22 11:38:35 PST 2015
+#Thu Jan 22 12:56:15 PST 2015
 relflagimagelist=
 user.input.dir=/Users/isaaceldridge/Desktop/wip/DITA_sandbox/source 
 copytotarget2sourcemaplist=
 uplevels=
-user.input.file=quick_start_map.ditamap
+user.input.file=PE_QSG_chunked.ditamap
 user.input.file.listfile=usr.input.file.list
 tempdirToinputmapdir.relative.value=
 relflagimagefile=relflagimage.list
