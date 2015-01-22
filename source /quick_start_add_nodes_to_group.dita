@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="task_vpk_mmh_rq">
     <title>Add Nodes to the New Node Group</title>
-    <shortdesc>To add nodes to a node group, you create rules that define which nodes should be
+    <shortdesc>To add nodes to a node group, you  create rules that define which nodes should be
         included in the group.</shortdesc>
     <taskbody>
         <steps id="steps_yxj_1nh_rq">
@@ -21,7 +21,8 @@
                     agent.</cmd>
                 <info>As you type in the rule, the number in the <uicontrol>Node matches</uicontrol>
                     column changes to indicate how many nodes this rule will affect. <image
-                        id="image_nyg_gnh_rq"/></info>
+                        id="image_nyg_gnh_rq" alt="Adding nodes to group"/><image
+                        href="images/assign_rule.png" id="image_zhb_zcf_vq" scale="50"/></info>
             </step>
             <step>
                 <cmd>Click <uicontrol>Add rule</uicontrol>, and then click the commit button.</cmd>

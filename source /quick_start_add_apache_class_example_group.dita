@@ -50,8 +50,10 @@
         </steps>
         <result><b>Result</b>: Puppet Enterprise is now managing the default Apache vhost on your
             agent node. At this point, you can check out the Apache "ReadMe" on the Forge to explore
-            options for managing your Apache instances as needed. The [*Nix module writing
-            QSG](./quick_writing_nix.html) discusses how to write your own class that manages a web
-            app running on an Apache virtual host.</result>
+            options for managing your Apache instances as needed. The <xref
+                href="https://docs.puppetlabs.com/pe/latest/quick_writing_nix.html" scope="external"
+                format="html">*Nix module writing QSG</xref>  (./quick_writing_nix.html) discusses
+            how to write your own class that manages a web app running on an Apache virtual
+            host.</result>
     </taskbody>
 </task>

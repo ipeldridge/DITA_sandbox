@@ -29,11 +29,11 @@
         </prereq>
         <context>A monolithic PE deployment entails installing the puppet master, the PE console,
             and PuppetDB all on one node. Puppet agent nodes are installed later as part of the
-            [agent installation quick start guide for *nix](./quick_start_install_agents_nix.html)
-            or the [agent installation quick start guide for
-            Windows](./quick_start_install_agents_windows.html). For more information about the
-            components that make up your PE deployment, visit the [installation
-            overview](./install_basic.html) in the PE docs.</context>
+                <xref href="quick_start_nix_install_supertask.dita" scope="local">Agent Installation
+                Quick Start Guide</xref> For more information about the components that make up your
+            PE deployment, visit the <xref
+                href="https://docs.puppetlabs.com/pe/latest/install_basic.html" scope="external"
+                format="html">installation overview</xref> in the PE docs.</context>
         <steps>
             <step>
                 <cmd>Review the Prerequisites.</cmd>

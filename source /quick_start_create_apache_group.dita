@@ -31,7 +31,8 @@
             </step>
             <step>
                 <cmd>Click <uicontrol>Commit 1 change</uicontrol>.<image id="image_o1d_fzg_rq"
-                    /></cmd>
+                        placement="break" href="images/apache_add_group.png" scope="local"
+                        scale="50" align="left"/></cmd>
             </step>
             <step>
                 <cmd>Repeat steps 5 - 7 for any additional nodes you want to add.</cmd>

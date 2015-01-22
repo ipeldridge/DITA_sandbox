@@ -10,10 +10,6 @@
 <meta name="DC.Title" content="PE Install Quick Start Guide"/>
 <meta name="abstract" content="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a split install."/>
 <meta name="description" content="To get you started using Puppet Enterprise (PE) relatively quickly and efficiently, this guide walks you through the steps of a monolithic install. A monolithic deployment is best suited for users who want to evaluate PE, or for users managing a small number of puppet agent nodes (up to 500 nodes). For larger installations, you’ll need to perform a split install."/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_supertask.html"/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_supertask.html"/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_login.html"/>
-<meta name="DC.Relation" scheme="URI" content="quick_start_login.html"/>
 <meta name="DC.Format" content="XHTML"/>
 <meta name="DC.Identifier" content="task_xwm_nl4_4q"/>
 <link rel="stylesheet" type="text/css" href="commonltr.css"/>
@@ -56,11 +52,9 @@
 
         <div class="section context">A monolithic PE deployment entails installing the puppet master, the PE console,
             and PuppetDB all on one node. Puppet agent nodes are installed later as part of the
-            [agent installation quick start guide for *nix](./quick_start_install_agents_nix.html)
-            or the [agent installation quick start guide for
-            Windows](./quick_start_install_agents_windows.html). For more information about the
-            components that make up your PE deployment, visit the [installation
-            overview](./install_basic.html) in the PE docs.</div>
+                <a class="xref" href="quick_start_nix_install_supertask.html" title="The following instructions are for installing Puppet agents on nodes running *nix operating systems.">Agent Installation
+                Quick Start Guide</a> For more information about the components that make up your
+            PE deployment, visit the <a class="xref" href="https://docs.puppetlabs.com/pe/latest/install_basic.html" target="_blank">installation overview</a> in the PE docs.</div>
 
         <ol class="ol steps"><li class="li step stepexpand">
                 <span class="ph cmd">Review the Prerequisites.</span>
@@ -178,16 +172,35 @@
 
     </div>
 
-<div class="related-links">
-<div class="familylinks">
-<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="quick_start_supertask.html" title="Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE installation for actual deployment or want to learn some fundamentals of configuration management with Puppet Enterprise, this series of guides provides the steps you need to get up and running relatively quickly. We’ll walk you through the setup of a monolithic (all-in-one node) installation and show you how to automate some basic tasks that sysadmins regularly perform.">Puppet Enterprise Quick Start Guide</a></div>
-<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="quick_start_supertask.html" title="Welcome to the Puppet Enterprise Quick Start Guide. Whether you’re setting up a PE installation for actual deployment or want to learn some fundamentals of configuration management with Puppet Enterprise, this series of guides provides the steps you need to get up and running relatively quickly. We’ll walk you through the setup of a monolithic (all-in-one node) installation and show you how to automate some basic tasks that sysadmins regularly perform.">Puppet Enterprise Quick Start Guide</a></div>
-<div class="nextlink"><strong>Next topic:</strong> <a class="link" href="quick_start_login.html" title="To log in to the console, you can select the Start Using Puppet Enterprise Nowbutton that appears at the end of the web-based installer or follow the steps below.">Log in to the PE Console</a></div>
+    <div class="topic task nested1" id="task_rfs_m1z_5q">
+    <h2 class="title topictitle2">Log in to the PE Console</h2>
+
+    
+    <div class="body taskbody"><p class="shortdesc">To log in to the console, you can select the <span class="ph uicontrol">Start Using Puppet Enterprise
+            Now</span>button that appears at the end of the web-based installer or follow the
+        steps below.</p>
+
+        <ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd"><strong class="ph b">On your control workstation</strong>, open a web browser and point it to the
+                    address supplied by the installer; for example,
+                        <samp class="ph codeph">https://master.example.com</samp>.</span>
+                <div class="itemgroup stepresult">You will receive a warning about an untrusted certificate. This is
+                    because you were the signing authority for the console's certificate, and your
+                    Puppet Enterprise deployment is not known to the major browser vendors as a
+                    valid signing authority. <strong class="ph b">Ignore the warning and accept the certificate</strong>.
+                    The steps to do this <a class="xref" href="https://docs.puppetlabs.com/pe/latest/console_accessing.html">vary by
+                        browser</a>.</div>
+            </li>
+<li class="li step stepexpand">
+                <span class="ph cmd">On the login page for the console, log in with the username <strong class="ph b">admin</strong> and
+                    the password you provided when installing the puppet master.</span>
+            </li>
+</ol>
+
+    </div>
+
 </div>
-<div class="relinfo reltasks"><strong>Related tasks</strong><br/>
-<div><a class="link" href="quick_start_login.html" title="To log in to the console, you can select the Start Using Puppet Enterprise Nowbutton that appears at the end of the web-based installer or follow the steps below.">Log in to the PE Console</a></div>
-</div>
-</div>
+
 
 </body>
 </html>

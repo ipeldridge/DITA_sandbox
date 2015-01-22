@@ -13,7 +13,8 @@
             <step>
                 <cmd>From the console, note the pending <uicontrol>node requests</uicontrol>
                     indicator in the upper right corner. Click it to load a list of currently
-                    pending node requests.<image id="image_kxd_wwt_4q"/></cmd>
+                    pending node requests.<image id="image_kxd_wwt_4q"/><image
+                        href="images/request_indicator.png" id="image_ojl_qhf_vq"/></cmd>
             </step>
             <step>
                 <cmd>Click the <uicontrol>Accept All</uicontrol> button to approve all the requests

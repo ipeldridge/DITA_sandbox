@@ -26,6 +26,9 @@
             </step>
         </steps>
         <result>Now, you have given members of the <b>Web developers</b> role permission to view the
-                <b>web_app_servers</b> node group.<image id="image_ydb_tjz_5q"/></result>
+                <b>web_app_servers</b> node group.<image id="image_ydb_tjz_5q"
+                alt="Web developers role permissions"/><image
+                href="images/role_views_node_group.png" id="image_w3j_qbf_vq" placement="break"
+                scale="50"/></result>
     </taskbody>
 </task>

@@ -2,39 +2,11 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map>
  <title>Puppet Enterprise Quick Start Guide</title>
- <topicref href="quick_start_supertask.dita" collection-type="sequence">
-  <topicref href="quick_start_install_mono.dita"/>
-  <topicref href="quick_start_nix_install_supertask.dita" chunk="to-content" linking="none">
-   <topicref href="quick_start_install_nix_same_os.dita"/>
-   <topicref href="quick_start_install_nix_diff_os.dita"/>
-   <topicref href="quick_start_sign_cert.dita"/>
-  </topicref>
-  <topicref href="adding_classes_supertask.dita" linking="none"/>
-  <topicref href="experiment%20files/quick_start_nc_rbac.dita" linking="none"/>
+ <topicref href="quick_start_supertask.dita" collection-type="sequence" linking="normal">
+  <topicref href="quick_start_install_mono.dita" linking="targetonly"/>
+  <topicref href="quick_start_nix_install_supertask.dita" linking="targetonly"/>
   <topicref href="quick_start_module_install.dita"/>
+  <topicref href="adding_classes_supertask.dita" linking="targetonly"/>
+  <topicref href="quick_start_nc_rbac.dita" linking="targetonly"/>
  </topicref>
- <reltable>
-  <relheader>
-   <relcolspec/>
-   <relcolspec/>
-   <relcolspec/>
-  </relheader>
-  <relrow/>
-  <relrow>
-   <relcell>
-    <topicref href="quick_start_install_mono.dita" linking="normal"/>
-   </relcell>
-   <relcell>
-    <topicref href="quick_start_login.dita"/>
-   </relcell>
-   <relcell/>
-  </relrow>
- </reltable>
- <reltable>
-  <relrow/>
-  <relrow/>
-  <relrow/>
-  <relrow/>
-  <relrow/>
- </reltable>
 </map>

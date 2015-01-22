@@ -5,18 +5,19 @@
     <taskbody>
         <steps id="steps_lqh_wmh_rq">
             <step>
-                <cmd>In the PE console, click **Classification**.</cmd>
+                <cmd>In the PE console, click <uicontrol>Classification</uicontrol>.</cmd>
             </step>
             <step>
-                <cmd>In the **Node group name** field, type "web_app_servers".</cmd>
+                <cmd>In the <uicontrol>Node group name</uicontrol> field, type
+                    "web_app_servers".</cmd>
             </step>
             <step>
-                <cmd>Leave **default** as the parent to the new node group, and **production** as
-                    the environment.</cmd>
+                <cmd>Leave <uicontrol>default</uicontrol> as the parent to the new node group, and
+                        <uicontrol>production</uicontrol> as the environment.</cmd>
             </step>
             <step>
-                <cmd>Click **Add Group**. The **web_app_servers** group is added to the list of node
-                    groups.</cmd>
+                <cmd>Click <uicontrol>Add Group</uicontrol>. The <b>web_app_servers</b> group is
+                    added to the list of node groups.</cmd>
             </step>
         </steps>
     </taskbody>
