@@ -16,11 +16,15 @@ Most of my testing so far has been around trying to determine a best practice fo
 
 ### conref 
 
-Top-level or parent topics use conrefs within the task bodies to pull in additional tasks from the `source` directory in order to create multi-topic pages.  
+Top-level or parent topics use conrefs within the task bodies to pull in additional tasks from the `source` directory in order to create multi-topic pages. 
+
+As far as I can tell, you cannot use this strategy to get topics of different types on a page. 
 
 ### chunked 
 
 Use the `chunk=to-content` parameter on all parent topics to create multi-topic pages. 
+
+This strategy will allow you to get topics of different types on a page. 
 
 ### Notes about Linking
 
