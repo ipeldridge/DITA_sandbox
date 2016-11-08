@@ -26,19 +26,6 @@ In this task, you configure `pe_repo` so agent installation requests will be sen
 3. In the __Value__ field, enter the address your load balancer resolves to (for example, `LOADBALANCER.EXAMPLE.COM`).
 4. Click __Add parameter__ and then the __Commit change__ button.
 
-### Direct new compile masters to the MoM
-
-In this task, you direct any newly provisioned compiles masters to point at the MoM instead of the load balancer. 
-
-1. From the console, click __Nodes__ > __Classification__.
-2. From the __Classification__ page, in the __Node group name__ field, enter a name, such as "PE CA pe\_repo override." (Note, do not add the quotes.)
-3. From the __Parent name__ drop-down list, select the __PE Master__ group, and then click __Add group__.
-4. In the __PE CA pe_repo override__ group, from the __Rules__ tab, in the __Node name__ field, enter the certname of your CA server (or, in most cases, the MoM).
-5. Click the __Classes__ tab, and in the __Add new class__ field, enter "pe\_repo," and select __Add class__. (Note, do not add the quotes.)
-6. From the __Parameter__ drop-down list, select __master__.
-7. In the __Value__ field, enter the FQDN of your original Puppet master/CA server (e.g. in the examples above, `MASTER.EXAMPLE.COM`).
-8. Click __Add parameter__ and then the __Commit change__ button.
-
 
 
 ***

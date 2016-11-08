@@ -43,7 +43,21 @@ Review these procedures before beginning, as performing these steps out of order
    
    >**Tip**: See [Using load balancers with compile masters](./install_lei_load.html) for more information about configuring `pe_repo` to point at your load balancer for agent installation requests.
    
-5. Run Puppet on selected nodes. 
+5. (Optional) Configure `pe_repo` to send agent install requests to the load balancer
+
+   >**Note:** If you're using load balancers, in this task, you configure `pe_repo` so agent installation requests will be sent to the load balancer.
+
+   a. From the console, click __Nodes__ > __Classification__, and select the __PE Master__ group.
+   
+   b. In the __PE Master__ group, click the __Classes__ tab, and find the __pe_repo__ class.
+   
+   c. From the __Parameter__ drop-down list, select __master__.
+   
+   d. In the __Value__ field, enter the address your load balancer resolves to (for example, `LOADBALANCER.EXAMPLE.COM`).
+   
+   e. Click __Add parameter__ and then the __Commit change__ button.
+
+6. Run Puppet on selected nodes. 
 
    >**Important**: The following Puppet runs **MUST** be done in the order listed in the following choices. Puppet has to be run on these nodes in this order for the compile master to be active as quickly as possible. 
 
