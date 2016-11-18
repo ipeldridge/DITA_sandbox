@@ -10,11 +10,7 @@ Before you begin, please note the following about these instructions:
 
 - The `<PUPPET MASTER HOSTNAME>` portion of the installer script---as provided in the following examples---refers to the FQDN of the Puppet master. If you've already logged into the console, you can find the exact script with the correct Puppet master hostname for your installation by clicking on **node requests** in the top right-hand corner of the console. (You do not need to have pending node requests to click.)
 
-- The `-k` flag is needed in order to get `curl` to trust the master, which it wouldn't otherwise since Puppet and its SSL infrastructure have not yet been set up on the node. See the [system requirements](./sys_req_os.html#aix) for more information about AIX, curl, and OpenSSL. 
-
-   However, users of AIX 5.3, 6.1, and 7.1 should note that the `-k` is not supported. You should replace the `-k` flag with `-tlsv1` or `-1`.
-
-- In some cases, you may use `wget` instead of `curl`---please use the appropriate flags as needed.
+>**Tip:** If you can't use `curl -k` to install agents as shown in the following procedures, refer to the [instructions on using `curl` against the Puppet master CA cert](#optional-install-agents-without-curl-k).
 
 ### Install agents with same same OS and architecture as the Puppet master
 
