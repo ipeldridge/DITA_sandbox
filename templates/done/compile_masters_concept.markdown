@@ -6,9 +6,15 @@ As your infrastructure grows beyond 2000 managed nodes, a single Puppet master m
 
 > **Tip:** See the [PE hardware recommendations](./sys_req_hw.html) for guidance on base installation types and recommended hardware for each.
 
+> **Important:** Compile masters must run the [same OS major version, platform, and architecture](./sys_req_os.html#puppet-master-platforms) as the MoM.
+
+### Components and services running on compile masters
+
 All compile masters contain a Puppet Server and a file sync client. If you use file sync, all the Puppet code in the code directory on your MoM is distributed to all compile masters. By default, compile masters check for code updates every five seconds.
 
-The CA service is disabled on compile masters. A proxy service running on the compile master's Puppet Server directs CA requests to the MoM, which hosts the CA in default installations. Compile masters also have:
+The CA service is disabled on compile masters. A proxy service running on the compile master's Puppet Server directs CA requests to the MoM, which hosts the CA in default installations. 
+
+Compile masters also have:
 
 - `peadmin` (the MCollective client)
 - `pe_repo` (PE's repo for agent installation)
@@ -16,5 +22,5 @@ The CA service is disabled on compile masters. A proxy service running on the co
 
 Compile master logs are kept at `/var/log/puppetlabs/puppetserver/`. 
 
-> **Important:** Compile masters must run the [same OS major version, platform, and architecture](./sys_req_os.html#puppet-master-platforms) as the MoM.
+
 
