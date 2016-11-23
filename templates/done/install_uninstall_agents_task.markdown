@@ -8,7 +8,7 @@ When you install agent nodes using the [agent installation script](./install_age
 
 > **Note:** About Mac OS X and Windows agent uninstallation
 >
-> For instructions on uninstalling PE on nodes running Windows, refer to the [uninstalling section][uninstall_win] of the Windows agent installation instructions.
+> For instructions on uninstalling PE on nodes running Windows, refer to the [uninstalling section](./install_windows.html#uninstalling) of the Windows agent installation instructions.
 >
 > To uninstall PE on a node running Mac OS X, simply access the uninstaller .pkg in the original OS X PE agent package you downloaded, and follow the instructions in the uninstall dialog. When you use the OS X uninstaller, you will completely remove all aspects of the PE agent from that node.
 
