@@ -1,6 +1,6 @@
 <!--Concepts provide context for task and reference topics. -->
 
-## About Puppet Enterprise binaries and symlinks
+## Puppet Enterprise binaries and symlinks
 
 PE installs a number of binaries and symlinks for interacting with its tools and services.
 

@@ -2,12 +2,11 @@
 
 ## Port forwarding to the PE installer
 
-The web-based PE installer requires access to port 3000 on the machine you're running the installer from. If you cannot connect directly to port 3000, we suggest port forwarding (or "tunneling" to) the installer via SSH.
+The web-based installer requires access to port 3000 on the machine you're running the installer from. If you cannot connect directly to port 3000, we suggest port forwarding (or "tunneling" to) the installer via SSH.
 
 The method for enabling port forwarding depends on your platform.
 
-
-### Port forwarding from a Linux machine
+### Port forwarding from a *nix machine
 
 1. On the machine from which you're running the installer, run `ssh -L 3000:localhost:3000 jumphost.exmple.tld`.
       

@@ -9,6 +9,8 @@ Text-mode installation requires you to run the installer with a `pe.conf` file o
 * [Monolithic text-mode installation instructions](./install_text_mode_mono.html)
 * [Split text-mode installation instructions](./install_text_mode_split.html)
 
+### The `pe.conf` file
+
 A `pe.conf` file is a [HOCON](./config_hocon.html) formatted file that declares parameters and values needed to install and configure PE. For example, you only need two key / value pairs for a monolithic installation:
 
 ~~~
@@ -17,6 +19,8 @@ A `pe.conf` file is a [HOCON](./config_hocon.html) formatted file that declares 
 ~~~
 
 For a complete list of mandatory and optional parameters, see the [`pe.conf` parameter reference](./install_pe_conf_param.html).
+
+### Obtaining a `pe.conf` file
 
 You have a few options for creating or obtaining a `pe.conf` file to use during installations.
 

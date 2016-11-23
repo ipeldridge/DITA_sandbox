@@ -2,15 +2,15 @@
 
 ## Download and Verify Puppet Enterprise Installation Package
 
-The following explains how to download and verify the Puppet Enterprise installation package.
+PE is distributed in packages specific to supported OS versions and architectures.
 
 The lastest versions of Puppet Enterprise are available for download from our website. The downloads include the full PE installation tarball and a GPG signature (.asc) file to verify authenticity. 
 
 ### Download Puppet Enterprise
 
-The following steps explain how to download PE. PE is distributed in packages specific to your OS version and architecture.
+PE is available for download from our website.
 
-1. Choose the appropriate tarball to [Download](http://info.puppetlabs.com/download-pe.html) the current version of Puppet Enterprise. 
+1. Choose the appropriate tarball to [download](http://info.puppetlabs.com/download-pe.html) the current version of Puppet Enterprise. 
 
    |      Filename ends with...        |                     Will install on...                       |
 |-----------------------------------|-----------------------------------------------------|  |
@@ -23,7 +23,7 @@ The following steps explain how to download PE. PE is distributed in packages sp
 
 ### Verify the installation package
 
-The following explains how to import the Puppet public key and run a cryptographic verification of the PE installation package you downloaded. 
+Before proceeding with your PE installation, you can import the Puppet public key and run a cryptographic verification of the PE installation package you downloaded. 
 
 Before you begin:
 
